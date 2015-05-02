@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 43f00964b9f45354ab3345d262fc3ce3
-timeCreated: 1430592551
+guid: 06c474040efb373418942ee3ea3fbd4a
+timeCreated: 1430594066
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
@@ -49,7 +49,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites: []
-  spritePackingTag: food
+  spritePackingTag: ingredients
   userData: 
   assetBundleName: 
   assetBundleVariant: 

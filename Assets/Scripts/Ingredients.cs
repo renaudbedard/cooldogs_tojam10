@@ -8,6 +8,8 @@ class Ingredients : MonoBehaviour
 {
 	public static Ingredients Instance { private set; get; }
 
+	public Texture2D[] Sprites;
+
 	Dictionary<string, Dictionary<string, int>> SnacksToFoods = new Dictionary<string, Dictionary<string, int>>();
 	Dictionary<string, Dictionary<string, int>> FoodsToSnacks = new Dictionary<string, Dictionary<string, int>>();
 	Dictionary<string, string> FriendlyNames = new Dictionary<string, string>();
@@ -74,6 +76,8 @@ class Ingredients : MonoBehaviour
 		//Debug.Log("Ingredients (8, 50% snacky) : " + GetIngredients(8, recipe, 0.5f).Aggregate("", (a, b) => a + b.ToString() + ", "));
 		//Debug.Log("Ingredients (4, 100% snacky) : " + GetIngredients(4, recipe, 1.0f).Aggregate("", (a, b) => a + b.ToString() + ", "));
 		//Debug.Log("Ingredients (8, 100% snacky) : " + GetIngredients(8, recipe, 1.0f).Aggregate("", (a, b) => a + b.ToString() + ", "));
+
+		//Debug.Log("Ingredients with missing sprites : " + FriendlyNames.Keys.Where(x => !Sprites.Any(y => y.name == x)).Aggregate("", (a, b) => a + b.ToString() + ", "));
 	}
 
 	public Dictionary<string, int> GetIngredientLikeness(string ingredient)
