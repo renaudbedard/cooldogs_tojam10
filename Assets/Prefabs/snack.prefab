@@ -9,7 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 443568}
   - 212: {fileID: 21263134}
-  m_Layer: 0
+  - 114: {fileID: 11466356}
+  m_Layer: 8
   m_Name: snack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,6 +29,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11466356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83c22f8afb0b349c0832d2502981f5dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snackType: 
 --- !u!212 &21263134
 SpriteRenderer:
   m_ObjectHideFlags: 1

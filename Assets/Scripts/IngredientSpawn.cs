@@ -10,4 +10,10 @@ class IngredientSpawn : MonoBehaviour
 	{
 		Gizmos.DrawSphere(transform.position, 0.1f);
 	}
+
+	void Start()
+	{
+		var obj = Instantiate(Ingredients.Instance.SnackTemplate, transform.position, Quaternion.AngleAxis(60, Vector3.right)) as GameObject;
+		obj.GetComponent<SpriteRenderer>().sprite = Ingredients.Instance.Sprites.Shuffle().First();
+	}
 }
