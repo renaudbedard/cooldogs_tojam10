@@ -56,5 +56,82 @@ class Ingredients : MonoBehaviour
 
 		//foreach (var f2s in FoodsToSnacks)
 		//	Debug.Log(f2s.Key + " : " + f2s.Value.Aggregate("", (a, b) => a + b.ToString() + ", "));
+
+		//var recipe = GetRecipe(4, true);
+		//Debug.Log("Snacky recipe : " + recipe.Aggregate("", (a, b) => a + b.ToString() + ", "));
+		//Debug.Log("Ingredients (4, 0% snacky) : " + GetIngredients(4, recipe, 0).Aggregate("", (a, b) => a + b.ToString() + ", "));
+		//Debug.Log("Ingredients (8, 0% snacky) : " + GetIngredients(8, recipe, 0).Aggregate("", (a, b) => a + b.ToString() + ", "));
+		//Debug.Log("Ingredients (4, 50% snacky) : " + GetIngredients(4, recipe, 0.5f).Aggregate("", (a, b) => a + b.ToString() + ", "));
+		//Debug.Log("Ingredients (8, 50% snacky) : " + GetIngredients(8, recipe, 0.5f).Aggregate("", (a, b) => a + b.ToString() + ", "));
+		//Debug.Log("Ingredients (4, 100% snacky) : " + GetIngredients(4, recipe, 1.0f).Aggregate("", (a, b) => a + b.ToString() + ", "));
+		//Debug.Log("Ingredients (8, 100% snacky) : " + GetIngredients(8, recipe, 1.0f).Aggregate("", (a, b) => a + b.ToString() + ", "));
+
+		//recipe = GetRecipe(4, false);
+		//Debug.Log("Snackless recipe : " + recipe.Aggregate("", (a, b) => a + b.ToString() + ", "));
+		//Debug.Log("Ingredients (4, 0% snacky) : " + GetIngredients(4, recipe, 0).Aggregate("", (a, b) => a + b.ToString() + ", "));
+		//Debug.Log("Ingredients (8, 0% snacky) : " + GetIngredients(8, recipe, 0).Aggregate("", (a, b) => a + b.ToString() + ", "));
+		//Debug.Log("Ingredients (4, 50% snacky) : " + GetIngredients(4, recipe, 0.5f).Aggregate("", (a, b) => a + b.ToString() + ", "));
+		//Debug.Log("Ingredients (8, 50% snacky) : " + GetIngredients(8, recipe, 0.5f).Aggregate("", (a, b) => a + b.ToString() + ", "));
+		//Debug.Log("Ingredients (4, 100% snacky) : " + GetIngredients(4, recipe, 1.0f).Aggregate("", (a, b) => a + b.ToString() + ", "));
+		//Debug.Log("Ingredients (8, 100% snacky) : " + GetIngredients(8, recipe, 1.0f).Aggregate("", (a, b) => a + b.ToString() + ", "));
+	}
+
+	public Dictionary<string, int> GetIngredientLikeness(string ingredient)
+	{
+		Dictionary<string, int> ret;
+		if (FoodsToSnacks.TryGetValue(ingredient, out ret))
+			return ret;
+		return SnacksToFoods[ingredient];
+	}
+
+	public List<string> GetRecipe(int ingredientCount, bool snacks)
+	{
+		return (snacks ? SnacksToFoods : FoodsToSnacks).Keys.Shuffle().Take(ingredientCount).ToList();
+	}
+
+	public List<string> GetIngredients(int ingredientCount, List<string> recipe, float snackiness)
+	{
+		var ingredients = new List<string>();
+
+		int foodsCount = Mathf.RoundToInt((1 - snackiness) * ingredientCount);
+
+		// start by choosing one good matching ingredient for the recipe
+		foreach (var recipeIngredient in recipe)
+		{
+			if (foodsCount > 0)
+			{
+				ingredients.Add(recipeIngredient);
+				foodsCount--;
+			}
+			else
+				ingredients.Add(GetIngredientLikeness(recipeIngredient).Where(x => x.Value > 0).Shuffle().First().Key);
+		}
+
+		// special case for :cooldog:
+		var relativeFoods = SnacksToFoods.ContainsKey(recipe[0]) ? SnacksToFoods : FoodsToSnacks;
+		var relativeSnacks = SnacksToFoods.ContainsKey(recipe[0]) ? FoodsToSnacks : SnacksToFoods;
+
+		// fill in the rest with random stuff
+		while (ingredients.Count < ingredientCount)
+		{
+			if (foodsCount > 0)
+			{
+				ingredients.Add(relativeFoods.Keys.Except(ingredients).Shuffle().First());
+				foodsCount--;
+			}
+			else
+				ingredients.Add(relativeSnacks.Keys.Except(ingredients).Shuffle().First());
+		}
+
+		return ingredients.Shuffle().ToList(); // DAT EFFICIENCY
+	}
+}
+
+public static class IEnumerableExtensions
+{
+	public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> enumerable)
+	{
+		// DO NOT TRY THIS AT HOME FOLKS
+		return enumerable.OrderBy(x => Guid.NewGuid());
 	}
 }
