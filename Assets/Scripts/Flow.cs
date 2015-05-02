@@ -20,6 +20,18 @@ public class Flow : MonoBehaviour
 
 	void Update()
 	{
-		// TODO
+		switch (CurrentPhase)
+		{
+			case Phase.CustomerSpeech:
+				// prepare stuff for customer arrival and speech bubble and stuff
+				// when over...
+
+				CurrentPhase = Phase.Prepare;
+				break;
+
+			case Phase.Prepare:
+
+				break;
+		}
 	}
 }

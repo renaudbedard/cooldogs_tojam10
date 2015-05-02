@@ -1,0 +1,792 @@
+fileFormatVersion: 2
+guid: 68970b3deea49664faea3d0f256617eb
+timeCreated: 1430606739
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: penguin
+    21300002: driftwood
+    21300004: shoe
+    21300006: dollar_bills
+    21300008: scrub_pad
+    21300010: ball_elastics
+    21300012: kleenex
+    21300014: puzzle_piece
+    21300016: roadkill
+    21300018: clothespeg
+    21300020: eraser
+    21300022: algae
+    21300024: bonnet
+    21300026: cardboard
+    21300028: lizard
+    21300030: paintroller
+    21300032: packing_peanuts
+    21300034: vhs_tape
+    21300036: jar_sand
+    21300038: watch
+    21300040: lego_person
+    21300042: ww2_photo
+    21300044: house_number
+    21300046: pipe
+    21300048: feathers
+    21300050: socks
+    21300052: corals
+    21300054: xmas_ornament
+    21300056: plastic_dino
+    21300058: toy_bike
+    21300060: baby_cube
+    21300062: bubble_wrap
+    21300064: frisbee
+    21300066: gas_can
+    21300068: balloon_animal
+    21300070: dart
+    21300072: cigarettes
+    21300074: candle
+    21300076: hammer
+    21300078: bag_goldfish
+    21300080: traffic_cone
+    21300082: wrench
+    21300084: mud
+    21300086: pills
+    21300088: rubber_duck
+    21300090: padlock
+    21300092: dust_bunny
+    21300094: lighter
+    21300096: cactus
+    21300098: glue
+    21300100: goat
+    21300102: starfish
+    21300104: underwear
+    21300106: pidgeon
+    21300108: bone
+    21300110: iphone_cracked
+    21300112: flipflops
+    21300114: flashlight
+    21300116: coins
+    21300118: glass_water
+    21300120: hair
+    21300122: guitar_pick
+    21300124: paper_plane
+    21300126: metropass
+    21300128: tangled_earbuds
+    21300130: floppy_disk
+    21300132: glitter
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: penguin
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1068
+        width: 332
+        height: 481
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: driftwood
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1302
+        width: 220
+        height: 247
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shoe
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 1335
+        width: 239
+        height: 214
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dollar_bills
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 1360
+        width: 248
+        height: 189
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: scrub_pad
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 1360
+        width: 214
+        height: 189
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ball_elastics
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 1362
+        width: 196
+        height: 187
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: kleenex
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 1372
+        width: 188
+        height: 177
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: puzzle_piece
+      rect:
+        serializedVersion: 2
+        x: 1870
+        y: 1377
+        width: 167
+        height: 172
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: roadkill
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 1307
+        width: 215
+        height: 242
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: clothespeg
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 1144
+        width: 212
+        height: 214
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: eraser
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 1184
+        width: 219
+        height: 174
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: algae
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 1190
+        width: 199
+        height: 170
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bonnet
+      rect:
+        serializedVersion: 2
+        x: 1852
+        y: 1205
+        width: 179
+        height: 165
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cardboard
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1074
+        width: 231
+        height: 226
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lizard
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 1081
+        width: 229
+        height: 224
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: paintroller
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1093
+        width: 210
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: packing_peanuts
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1099
+        width: 204
+        height: 235
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: vhs_tape
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 830
+        width: 247
+        height: 236
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: jar_sand
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 831
+        width: 214
+        height: 242
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: watch
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 836
+        width: 211
+        height: 243
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lego_person
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 855
+        width: 206
+        height: 236
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ww2_photo
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 872
+        width: 204
+        height: 226
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: house_number
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 892
+        width: 178
+        height: 250
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pipe
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 1051
+        width: 233
+        height: 137
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: feathers
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 983
+        width: 175
+        height: 200
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: socks
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 835
+        width: 146
+        height: 214
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: corals
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 843
+        width: 125
+        height: 206
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: xmas_ornament
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 648
+        width: 177
+        height: 222
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: plastic_dino
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 656
+        width: 168
+        height: 234
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: toy_bike
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 834
+        width: 226
+        height: 150
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_cube
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 641
+        width: 219
+        height: 212
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bubble_wrap
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 601
+        width: 238
+        height: 228
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: frisbee
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 616
+        width: 222
+        height: 218
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: gas_can
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 590
+        width: 238
+        height: 238
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: balloon_animal
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 614
+        width: 235
+        height: 215
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dart
+      rect:
+        serializedVersion: 2
+        x: 1513
+        y: 680
+        width: 175
+        height: 152
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cigarettes
+      rect:
+        serializedVersion: 2
+        x: 1697
+        y: 686
+        width: 141
+        height: 146
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: candle
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 619
+        width: 131
+        height: 214
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hammer
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 345
+        width: 233
+        height: 243
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bag_goldfish
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 350
+        width: 229
+        height: 238
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: traffic_cone
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 355
+        width: 223
+        height: 244
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: wrench
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 381
+        width: 218
+        height: 231
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mud
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 408
+        width: 226
+        height: 206
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pills
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 431
+        width: 213
+        height: 208
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rubber_duck
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 492
+        width: 219
+        height: 162
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: padlock
+      rect:
+        serializedVersion: 2
+        x: 1576
+        y: 492
+        width: 131
+        height: 186
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dust_bunny
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 532
+        width: 149
+        height: 148
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lighter
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 391
+        width: 107
+        height: 226
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cactus
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 239
+        width: 142
+        height: 251
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: glue
+      rect:
+        serializedVersion: 2
+        x: 1661
+        y: 255
+        width: 134
+        height: 235
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: goat
+      rect:
+        serializedVersion: 2
+        x: 1797
+        y: 277
+        width: 123
+        height: 253
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: starfish
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 97
+        width: 228
+        height: 246
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: underwear
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 116
+        width: 242
+        height: 227
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pidgeon
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 109
+        width: 223
+        height: 244
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bone
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 157
+        width: 212
+        height: 222
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: iphone_cracked
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 158
+        width: 180
+        height: 248
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: flipflops
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 204
+        width: 221
+        height: 202
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: flashlight
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 223
+        width: 195
+        height: 208
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: coins
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 51
+        width: 190
+        height: 186
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: glass_water
+      rect:
+        serializedVersion: 2
+        x: 1775
+        y: 48
+        width: 148
+        height: 205
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hair
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 213
+        width: 106
+        height: 176
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: guitar_pick
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 71
+        height: 93
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: paper_plane
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 4
+        width: 226
+        height: 151
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: metropass
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 2
+        width: 241
+        height: 154
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tangled_earbuds
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 3
+        width: 213
+        height: 199
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: floppy_disk
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 23
+        width: 195
+        height: 198
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: glitter
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 830
+        width: 229
+        height: 236
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

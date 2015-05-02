@@ -8,7 +8,8 @@ class Ingredients : MonoBehaviour
 {
 	public static Ingredients Instance { private set; get; }
 
-	public Texture2D[] Sprites;
+	public Sprite[] Sprites;
+	public GameObject SnackTemplate;
 
 	Dictionary<string, Dictionary<string, int>> SnacksToFoods = new Dictionary<string, Dictionary<string, int>>();
 	Dictionary<string, Dictionary<string, int>> FoodsToSnacks = new Dictionary<string, Dictionary<string, int>>();

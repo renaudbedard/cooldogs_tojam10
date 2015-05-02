@@ -1,0 +1,539 @@
+fileFormatVersion: 2
+guid: 955de74dbaeb7524c933c8bb95cd4373
+timeCreated: 1430606778
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: bacon
+    21300002: cabbage
+    21300004: fried_egg
+    21300006: lettuce
+    21300008: carrot
+    21300010: fish
+    21300012: bread
+    21300014: cucumber
+    21300016: olives
+    21300018: zucchini
+    21300020: avocado
+    21300022: ice_cream
+    21300024: ham_slice
+    21300026: cauliflower
+    21300028: corn
+    21300030: poached_egg
+    21300032: milk
+    21300034: coconut
+    21300036: onion
+    21300038: chicken
+    21300040: sausage
+    21300042: hot_pepper
+    21300044: apple_green
+    21300046: burger_patty
+    21300048: butter
+    21300050: pork
+    21300052: squash
+    21300054: apple_red
+    21300056: pickles
+    21300058: kiwi
+    21300060: garlic
+    21300062: eggplant
+    21300064: cheese
+    21300066: bell_pepper
+    21300068: banana
+    21300070: rice
+    21300072: oil
+    21300074: strawberry
+    21300076: lemon
+    21300078: tomato
+    21300080: mushrooms
+    21300082: grapes
+    21300084: broccoli
+    21300086: pasta
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: bacon
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 899
+        width: 251
+        height: 251
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cabbage
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 906
+        width: 250
+        height: 244
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fried_egg
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 912
+        width: 246
+        height: 238
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lettuce
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 913
+        width: 241
+        height: 237
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: carrot
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 906
+        width: 237
+        height: 244
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fish
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 904
+        width: 235
+        height: 246
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bread
+      rect:
+        serializedVersion: 2
+        x: 1474
+        y: 902
+        width: 229
+        height: 248
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cucumber
+      rect:
+        serializedVersion: 2
+        x: 1705
+        y: 902
+        width: 227
+        height: 248
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: olives
+      rect:
+        serializedVersion: 2
+        x: 1934
+        y: 1056
+        width: 100
+        height: 94
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: zucchini
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 649
+        width: 248
+        height: 248
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: avocado
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 646
+        width: 217
+        height: 251
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ice_cream
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 659
+        width: 217
+        height: 245
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ham_slice
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 668
+        width: 204
+        height: 242
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cauliflower
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 673
+        width: 239
+        height: 231
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: corn
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 676
+        width: 233
+        height: 226
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poached_egg
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 676
+        width: 231
+        height: 224
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: milk
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 674
+        width: 218
+        height: 226
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: coconut
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 681
+        width: 215
+        height: 219
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: onion
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 400
+        width: 245
+        height: 247
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: chicken
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 397
+        width: 226
+        height: 247
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sausage
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 419
+        width: 233
+        height: 238
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hot_pepper
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 432
+        width: 225
+        height: 234
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: apple_green
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 440
+        width: 200
+        height: 231
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: burger_patty
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 448
+        width: 230
+        height: 226
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: butter
+      rect:
+        serializedVersion: 2
+        x: 1373
+        y: 455
+        width: 229
+        height: 219
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pork
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 456
+        width: 223
+        height: 216
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: squash
+      rect:
+        serializedVersion: 2
+        x: 1829
+        y: 453
+        width: 204
+        height: 228
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: apple_red
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 207
+        width: 200
+        height: 231
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pickles
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 218
+        width: 226
+        height: 228
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: kiwi
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 226
+        width: 181
+        height: 227
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: garlic
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 247
+        width: 193
+        height: 204
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: eggplant
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 180
+        width: 230
+        height: 237
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: cheese
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 197
+        width: 232
+        height: 233
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bell_pepper
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 153
+        width: 243
+        height: 245
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: banana
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 154
+        width: 231
+        height: 241
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rice
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 222
+        width: 219
+        height: 232
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: oil
+      rect:
+        serializedVersion: 2
+        x: 1791
+        y: 9
+        width: 162
+        height: 236
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: strawberry
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 31
+        width: 87
+        height: 120
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lemon
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 2
+        width: 156
+        height: 150
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tomato
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 3
+        width: 201
+        height: 192
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mushrooms
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 25
+        width: 156
+        height: 170
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: grapes
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 3
+        width: 169
+        height: 213
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: broccoli
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 2
+        width: 186
+        height: 219
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pasta
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 6
+        width: 225
+        height: 215
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
