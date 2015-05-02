@@ -8,18 +8,32 @@ public class Flow : MonoBehaviour
 {
 	public enum Phase
 	{
+		WaitingForStart,
+		CustomerEnter,
 		CustomerSpeech,
 		Prepare,
 		GiveOut,
 		Verdict,
-		CustomerLeave
+		CustomerLeave,
+		Lose
 	}
 
 	public Order CurrentOrder;
 	public Phase CurrentPhase;
 
-	void Update()
-	{
-		// TODO
+	[SerializeField]
+	CustomerSpawner customerSpawner;
+
+	void Start() {
+	}
+
+	void Update() {
+		switch (CurrentPhase) {
+		case Phase.CustomerEnter:
+					
+			break;
+		default:
+			break;
+		}
 	}
 }
