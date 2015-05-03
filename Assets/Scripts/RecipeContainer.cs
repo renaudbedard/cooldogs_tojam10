@@ -13,12 +13,18 @@ public class RecipeContainer : MonoBehaviour {
 	float bubbleWidth;
 	Vector3 iconPosition;
 
+	IngredientSpawn[] SpawnPoints;
+	public Transform SpawnPointsContainer;
+
+	public float Snackiness;
+
 	// Use this for initialization
 	void Start () {
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		bubbleWidth = spriteRenderer.bounds.size.x;
 		spriteRenderer.enabled = false;
 		RecipeIcons = new List<GameObject>();
+		SpawnPoints = SpawnPointsContainer.GetComponentsInChildren<IngredientSpawn>();
 	}
 	
 	public void GenerateRecipe() {
@@ -28,6 +34,13 @@ public class RecipeContainer : MonoBehaviour {
                                                   "time", 0.8f,
 		                                          "oncomplete", "AnimateIngredients",
                                                   "onCompleteTarget", gameObject));
+
+		var ingredients = Ingredients.Instance.GetIngredients(SpawnPoints.Length, CurrentRecipe, Snackiness);
+		int i = 0;
+		foreach (var spawnPoint in SpawnPoints.Shuffle())
+			spawnPoint.Spawn(ingredients[i++]);
+
+		Snackiness = Mathf.Clamp01(Snackiness + 0.1f);
 	}
 
 	void AnimateIngredients() {
