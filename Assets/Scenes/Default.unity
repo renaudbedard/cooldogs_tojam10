@@ -256,42 +256,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 444512, guid: 5754877db03fe4e80be0b94f8891d9df, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 496214, guid: 5754877db03fe4e80be0b94f8891d9df, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 433304, guid: 5754877db03fe4e80be0b94f8891d9df, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 423030, guid: 5754877db03fe4e80be0b94f8891d9df, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 472768, guid: 5754877db03fe4e80be0b94f8891d9df, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458396, guid: 5754877db03fe4e80be0b94f8891d9df, type: 2}
-      propertyPath: pathColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458396, guid: 5754877db03fe4e80be0b94f8891d9df, type: 2}
-      propertyPath: pathColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458396, guid: 5754877db03fe4e80be0b94f8891d9df, type: 2}
-      propertyPath: pathColor.b
-      value: .931034565
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458396, guid: 5754877db03fe4e80be0b94f8891d9df, type: 2}
-      propertyPath: nodes.Array.data[4].y
-      value: -1.48646545
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5754877db03fe4e80be0b94f8891d9df, type: 2}
   m_IsPrefabParent: 0
@@ -377,6 +341,12 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 492512, guid: 5754877db03fe4e80be0b94f8891d9df, type: 2}
   m_PrefabInternal: {fileID: 1250457294}
+--- !u!114 &2011604154 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11418672, guid: 5754877db03fe4e80be0b94f8891d9df,
+    type: 2}
+  m_PrefabInternal: {fileID: 1250457294}
+  m_Script: {fileID: 11500000, guid: 531dca34fc06f4042a4994d243a45c60, type: 3}
 --- !u!1001 &2054604975
 Prefab:
   m_ObjectHideFlags: 0
@@ -436,6 +406,10 @@ Prefab:
       propertyPath: Silhouette
       value: 
       objectReference: {fileID: 493384718}
+    - target: {fileID: 11431394, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
+      propertyPath: CookingMat
+      value: 
+      objectReference: {fileID: 2011604154}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
   m_IsPrefabParent: 0

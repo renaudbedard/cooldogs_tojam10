@@ -83,8 +83,6 @@ public class Customers : MonoBehaviour {
 		doingThings = false;
 	}
 
-
-
 	public void DestroyCurrentCustomer() {
 		if (currentCustomer != null) {
 			Destroy (currentCustomer.gameObject);
@@ -107,10 +105,10 @@ public class Customers : MonoBehaviour {
 
 			CameraMover.Instance.SetLookSpeed(50f);
 
-			System.Collections.Hashtable iTweenHash = iTween.Hash("path", currentSpawnPath.nodes.ToArray(),
+			System.Collections.Hashtable iTweenHash = iTween.Hash("path", cursorServingPath.nodes.ToArray(),
 			                                                      "easeType", "easeOutQuad",
 			                                                      "time", 2f,
-			                                                      "delay", 0.2f,
+			                                                      "delay", 0.3f,
 			                                                      "onstart", "StartServing",
 			                                                      "onstarttarget", gameObject,
 			                                                      "oncomplete", "CustomerServed",
@@ -127,11 +125,14 @@ public class Customers : MonoBehaviour {
 	void StartServing() {
 		CoolCursor.Instance.SetSprite("serve");
 		CoolCursor.Instance.hugTarget = false;
+		CookingMat.currentPlate.transform.parent = CoolCursor.Instance.transform;
+		//recipeContainer
 		CameraMover.Instance.LookingAtWindow = true;
 	}
 
 	void CustomerServed() {
-		Debug.Log ("WOOOOOO");
+		CookingMat.currentPlate.transform.parent = currentCustomer.transform;
+		
 		CoolCursor.Instance.hugTarget = true;
 		CoolCursor.Instance.hugCursor = true;
 		

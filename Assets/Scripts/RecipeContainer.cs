@@ -17,6 +17,7 @@ public class RecipeContainer : MonoBehaviour {
 	public Transform SpawnPointsContainer;
 
 	public Silhouette Silhouette;
+	public CookingMat CookingMat;
 
 	public float Snackiness;
 
@@ -49,6 +50,7 @@ public class RecipeContainer : MonoBehaviour {
 
 		// randomize silhouette
 		Silhouette.Randomize();
+		CookingMat.SpawnNewPlate();
 
 		Customers.Instance.CustomerTalk();
 	}

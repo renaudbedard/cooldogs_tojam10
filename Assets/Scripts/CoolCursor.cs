@@ -78,7 +78,7 @@ public class CoolCursor : MonoBehaviour {
 		switch (mode) {
 		case "serve":
 			sr.sprite = handServe;
-			sr.sortingOrder = -1;
+			sr.sortingOrder = -2;
 			gameObject.transform.localScale = baseScale;
 			break;
 		case "closed":

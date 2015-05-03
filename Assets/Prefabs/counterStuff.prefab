@@ -1121,13 +1121,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathName: handServePath
-  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  pathColor: {r: 1, g: 0, b: .931034565, a: 1}
   nodes:
-  - {x: .645010293, y: -7.23270798, z: -3.05500555}
-  - {x: -1.57894945, y: -4.47909737, z: 1.59383106}
-  - {x: -.0334322453, y: -3.45247555, z: 3.42269754}
+  - {x: -.227918267, y: -4.92133427, z: .897181034}
+  - {x: -.961527348, y: -4.03108215, z: 2.36041403}
+  - {x: -.0334322453, y: -3.45247555, z: 3.46047354}
   - {x: -.945831299, y: -2.26876545, z: 5.16618729}
-  - {x: .214447021, y: -1.68369293, z: 7.3139782}
+  - {x: .214447021, y: -.55342865, z: 7.61140347}
   nodeCount: 5
   initialized: 1
   initialName: New Path 1
@@ -1151,6 +1151,7 @@ MonoBehaviour:
   handServe: {fileID: 21300004, guid: ac771ee9e86e94e389a0dd273afd1c2b, type: 3}
   handTargetPosition: {x: 0, y: 0, z: 0}
   hugCursor: 0
+  hugTarget: 0
 --- !u!114 &11465914
 MonoBehaviour:
   m_ObjectHideFlags: 1
