@@ -130,6 +130,68 @@ class Ingredients : MonoBehaviour
 
 		return ingredients.Shuffle().ToList(); // DAT EFFICIENCY
 	}
+
+	public int GetScore(List<string> recipe, List<string> chosenIngredients)
+	{
+		recipe = recipe.ToList();
+		chosenIngredients = chosenIngredients.ToList();
+
+		int recipeSize = recipe.Count;
+		int chosenSize = chosenIngredients.Count;
+
+		int points = 0;
+
+		foreach (var recipeIngredient in recipe.ToArray())
+		{
+			// check for a good-matching ingredient in provided stuff (and eliminate)
+			foreach (var ingredient in chosenIngredients.ToArray())
+			{
+				var dict = GetIngredientLikeness(ingredient);
+				int score;
+				if (dict.TryGetValue(recipeIngredient, out score))
+				{
+					if (score == 1)
+					{
+						points++;
+						chosenIngredients.Remove(ingredient);
+						recipe.Remove(recipeIngredient);
+						break;
+					}
+					else if (score == 2)
+					{
+						points += 2;
+						chosenIngredients.Remove(ingredient);
+						recipe.Remove(recipeIngredient);
+						break;
+					}
+				}
+			}
+		}
+
+		foreach (var recipeIngredient in recipe)
+		{
+			// check for real bad matches
+			foreach (var ingredient in chosenIngredients)
+			{
+				var dict = GetIngredientLikeness(ingredient);
+				int score;
+				if (dict.TryGetValue(recipeIngredient, out score) && score == -1)
+				{
+					points -= 2;
+					break;
+				}
+			}
+		}
+
+		// unfulfilled = bad
+		points -= recipe.Count;
+
+		if (points >= recipeSize)
+			return 2;
+		if (points > recipeSize / 2)
+			return 1;
+		return 0;
+	}
 }
 
 public static class IEnumerableExtensions
