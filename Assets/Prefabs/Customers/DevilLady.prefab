@@ -11,7 +11,8 @@ GameObject:
   - 212: {fileID: 21205134}
   - 114: {fileID: 11407444}
   - 82: {fileID: 8264776}
-  m_Layer: 0
+  - 65: {fileID: 6533954}
+  m_Layer: 14
   m_Name: DevilLady
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,6 +31,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!65 &6533954
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.95200264, y: 4.47513676, z: .200000003}
+  m_Center: {x: -.178272545, y: .279113144, z: 0}
 --- !u!82 &8264776
 AudioSource:
   m_ObjectHideFlags: 1
@@ -114,7 +127,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 51021d92343fb8f488d626c7059cbeb2, type: 3}
   - {fileID: 8300000, guid: 579e986ea751eb049abe2c0094eb4343, type: 3}
   - {fileID: 8300000, guid: d853b3cc0ab10ce40a62a27d90619287, type: 3}
+  PainAudio: {fileID: 8300000, guid: b98bce52d0f8c9847960eefbc0883b12, type: 3}
+  TalkFrames:
+  - {fileID: 21300000, guid: 20473c8a4b663fa44af1802a1cfd5594, type: 3}
+  - {fileID: 21300000, guid: a199edf37b1b8c64db5b21df7ae50da4, type: 3}
+  IdleFrame: {fileID: 21300000, guid: f1f773a5381d33c42ac7fdddb7d900cd, type: 3}
   LikesGarbage: 0
+  TalkChangeSpriteSpeed: .125
 --- !u!212 &21205134
 SpriteRenderer:
   m_ObjectHideFlags: 1

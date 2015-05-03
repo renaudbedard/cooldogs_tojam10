@@ -11,7 +11,8 @@ GameObject:
   - 212: {fileID: 21205134}
   - 114: {fileID: 11407444}
   - 82: {fileID: 8254184}
-  m_Layer: 0
+  - 65: {fileID: 6543288}
+  m_Layer: 14
   m_Name: YourBoyArthur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,6 +31,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!65 &6543288
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.87481475, y: 4.74052048, z: .200000003}
+  m_Center: {x: -.0594725981, y: .0921194404, z: 0}
 --- !u!82 &8254184
 AudioSource:
   m_ObjectHideFlags: 1
@@ -113,7 +126,13 @@ MonoBehaviour:
   TalkAudios:
   - {fileID: 8300000, guid: afff917d7e6f4d54586f4ec17fbddcf8, type: 3}
   - {fileID: 8300000, guid: bd43e329fbef42941980baca7a1dcb01, type: 3}
+  PainAudio: {fileID: 8300000, guid: df29321dd17b1324fb931e6b96e9e41d, type: 3}
+  TalkFrames:
+  - {fileID: 21300000, guid: afb108b706e80f644879f6cc82b96e5d, type: 3}
+  - {fileID: 21300000, guid: 005827f9c7ebd5d4d8b868e3ce1819c3, type: 3}
+  IdleFrame: {fileID: 21300000, guid: 4a8fa8c054387fc4198078e8ba07492c, type: 3}
   LikesGarbage: 0
+  TalkChangeSpriteSpeed: .125
 --- !u!212 &21205134
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 using UnityEngine;
 using System.Collections;
 
@@ -9,6 +10,9 @@ public class Snack : MonoBehaviour {
 	public bool placed;
 
 	Transform spriteContainer;
+
+	public AudioClip[] Foley;
+	AudioClip Pick, Drop;
 
 	public void Initialize()
 	{
@@ -29,10 +33,16 @@ public class Snack : MonoBehaviour {
 		rigidBody.angularDrag = 1;
 		rigidBody.mass = 100;
 
+		Pick = Foley.Shuffle().First();
+		Drop = Foley.Except(new [] {Pick}).Shuffle().First();
+
 		//rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
 	}
 
-	public void Update() 
+	public void PlayFoley(bool pick)
 	{
+		GetComponent<AudioSource>().pitch = Random.Range(0.9f, 1.1f);
+		GetComponent<AudioSource>().PlayOneShot(pick ? Pick : Drop);
 	}
+
 }

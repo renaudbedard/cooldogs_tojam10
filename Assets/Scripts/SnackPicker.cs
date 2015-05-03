@@ -60,6 +60,7 @@ public class SnackPicker : MonoBehaviour {
 						lastJoint.axis = new Vector3(0, 0, 1);
 						//lastJoint.autoConfigureConnectedAnchor = false;
 						lastJoint.connectedBody = snackRB;
+						heldSnack.PlayFoley(true);
 
 						lastJoint.anchor -= new Vector3(0f,1.5f,0f);
 					}
@@ -73,6 +74,8 @@ public class SnackPicker : MonoBehaviour {
 			heldSnack.GetComponentInChildren<Rigidbody>().isKinematic = true;
 			heldSnack.GetComponentInChildren<Rigidbody>().velocity = Vector3.zero;
 			heldSnack.GetComponentInChildren<Rigidbody>().angularVelocity = Vector3.zero;
+
+			heldSnack.PlayFoley(false);
 
 			if (lastJoint)
 			{

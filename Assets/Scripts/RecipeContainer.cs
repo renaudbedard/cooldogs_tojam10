@@ -90,7 +90,11 @@ public class RecipeContainer : MonoBehaviour {
 		}
 	}
 
-	void EnableIconRenderer(GameObject icon){
+	void EnableIconRenderer(GameObject icon)
+	{
+		GetComponent<AudioSource>().pitch = UnityEngine.Random.Range(0.9f, 1.1f);
+		GetComponent<AudioSource>().Play();
+
 		icon.GetComponentInChildren<SpriteRenderer>().enabled = true;
 		if (RecipeIcons.IndexOf (icon) >= RecipeIcons.Count - 1) {
 			Customers.Instance.CustomerOrderFinish();

@@ -11,7 +11,8 @@ GameObject:
   - 212: {fileID: 21205134}
   - 114: {fileID: 11407444}
   - 82: {fileID: 8214734}
-  m_Layer: 0
+  - 65: {fileID: 6518704}
+  m_Layer: 14
   m_Name: Robot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,6 +31,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!65 &6518704
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9705348, y: 4.37929678, z: .200000003}
+  m_Center: {x: .1332151, y: -.192839637, z: 0}
 --- !u!82 &8214734
 AudioSource:
   m_ObjectHideFlags: 1
@@ -114,7 +127,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 57003f7b87b98b742b9330a1b53f1fe5, type: 3}
   - {fileID: 8300000, guid: 852f214161c17114a99649bc23a8088f, type: 3}
   - {fileID: 8300000, guid: d46eb1ffc913172458762522487fe6ec, type: 3}
+  PainAudio: {fileID: 8300000, guid: afdbc20c6315f2f47adbea9079401846, type: 3}
+  TalkFrames:
+  - {fileID: 21300000, guid: cfe28fc80191d1044a9c00488af87409, type: 3}
+  - {fileID: 21300000, guid: 411375c78de3e434ba952381693fc071, type: 3}
+  IdleFrame: {fileID: 21300000, guid: 7b049f4dde76b5344a5fe2f17c7b7929, type: 3}
   LikesGarbage: 1
+  TalkChangeSpriteSpeed: .125
 --- !u!212 &21205134
 SpriteRenderer:
   m_ObjectHideFlags: 1

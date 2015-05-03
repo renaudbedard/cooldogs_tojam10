@@ -11,7 +11,8 @@ GameObject:
   - 212: {fileID: 21205134}
   - 114: {fileID: 11407444}
   - 82: {fileID: 8238610}
-  m_Layer: 0
+  - 65: {fileID: 6542902}
+  m_Layer: 14
   m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,6 +31,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!65 &6542902
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.18923926, y: 4.34968519, z: .200000003}
+  m_Center: {x: .0247262083, y: -.309476197, z: 0}
 --- !u!82 &8238610
 AudioSource:
   m_ObjectHideFlags: 1
@@ -113,7 +126,13 @@ MonoBehaviour:
   TalkAudios:
   - {fileID: 8300000, guid: 7a2a9f5f5c4c7c045a0e7242d6dfd49c, type: 3}
   - {fileID: 8300000, guid: 959cece6ee0cf494a882da43601fc77f, type: 3}
+  PainAudio: {fileID: 8300000, guid: 279817f55a907b14f9691f91807ba07f, type: 3}
+  TalkFrames:
+  - {fileID: 21300000, guid: 815d28f94b5aa154b9a91371f1cb0562, type: 3}
+  - {fileID: 21300000, guid: 2f4af08a4158d5c43a3ca93e5a06af4e, type: 3}
+  IdleFrame: {fileID: 21300000, guid: fc3f03936255b7b42b71b0c639ddc67b, type: 3}
   LikesGarbage: 0
+  TalkChangeSpriteSpeed: .125
 --- !u!212 &21205134
 SpriteRenderer:
   m_ObjectHideFlags: 1
