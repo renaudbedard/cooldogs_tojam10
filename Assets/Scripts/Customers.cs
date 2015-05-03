@@ -10,7 +10,7 @@ public class Customers : MonoBehaviour {
 
 	public bool doingThings = false;
 	
-	Customer currentCustomer;
+	public Customer currentCustomer;
 	iTweenPath currentSpawnPath;
 	string lastCustomerName;
 

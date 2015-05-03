@@ -77,6 +77,10 @@ public class Flow : MonoBehaviour
 			break;
 		case Phase.Prepare: 
 			cameraMover.LookingAtWindow = false;
+			BoxCollider cc = Customers.Instance.currentCustomer.GetComponent<BoxCollider>();
+			if (cc != null){
+				Destroy(cc);
+			};
 			if (Input.GetKeyDown(KeyCode.Space)) {
 				Customers.Instance.ServeCustomer(snackPicker.hasSnacksOnPlate);
 				sky.ChangeColour();
