@@ -40,8 +40,8 @@ public class Customers : MonoBehaviour {
 		currentCustomer = obj.GetComponent<Customer>();
 
 		iTween.MoveTo(currentCustomer.gameObject, iTween.Hash("path", currentSpawnPath.nodes.ToArray(),
-		                                                      "easeType", "easeInOut",
-		                                                      "time", 3.5f,
+		                                                      "easeType", "easeOutQuad",
+		                                                      "time", 6f,
 		                                                      "oncomplete", "CustomerEnterFinish",
 		                                                      "onCompleteTarget", gameObject));
 	}
