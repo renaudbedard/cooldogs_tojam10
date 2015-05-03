@@ -287,6 +287,10 @@ Prefab:
       propertyPath: sky
       value: 
       objectReference: {fileID: 201861022}
+    - target: {fileID: 21281174, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
   m_IsPrefabParent: 0
