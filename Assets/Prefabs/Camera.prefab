@@ -245,7 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropSnackLayers:
     serializedVersion: 2
-    m_Bits: 4294963912
+    m_Bits: 4294955720
   heldSnacksLayer:
     serializedVersion: 2
     m_Bits: 1024

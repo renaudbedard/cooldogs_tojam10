@@ -51,6 +51,17 @@ public class RecipeContainer : MonoBehaviour {
 		Silhouette.Randomize();
 	}
 
+	public bool RateRecipe()
+	{
+		//float silhouetteMatch = Silhouette.TestMatch();
+		//float ingredientsMatch = Ingredients.Instance.GetScore(CurrentRecipe, FindObjectsOfType<Snack>().Where(x => x.placed).Select(x => x.snackType).ToList());
+
+		//Debug.Log("Ingredients : " + ingredientsMatch + ", Silhouette : " + silhouetteMatch);
+
+		// todo
+		return true;
+	}
+
 	void AnimateIngredients() {
 		int orderIndex = 0;
 		string orderPart;

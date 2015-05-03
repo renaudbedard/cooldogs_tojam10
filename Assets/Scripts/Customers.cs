@@ -72,7 +72,9 @@ public class Customers : MonoBehaviour {
 		}
 	}
 
-	public void ServeCustomer() {
+	public void ServeCustomer()
+	{
+		bool satisfied = recipeContainer.RateRecipe();
 		recipeContainer.DestroyRecipe();
 	}
 }
