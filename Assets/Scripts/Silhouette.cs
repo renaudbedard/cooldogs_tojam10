@@ -78,18 +78,18 @@ public class Silhouette : MonoBehaviour
 		Destroy(cam);
 
 		// debug
-		//byte[] bytes = silhouetteTex.EncodeToPNG();
-		//File.WriteAllBytes("C:\\silhouette.png", bytes);
-		//bytes = snacksTex.EncodeToPNG();
-		//File.WriteAllBytes("C:\\snacks.png", bytes);
+		byte[] bytes = silhouetteTex.EncodeToPNG();
+		File.WriteAllBytes("C:\\silhouette.png", bytes);
+		bytes = snacksTex.EncodeToPNG();
+		File.WriteAllBytes("C:\\snacks.png", bytes);
 
 		// compare
 		float matchingPixellos = 0, expectedPixellos = 0;
 		for (int i = 0; i < silhouetteTex.width; i++)
 		for (int j = 0; j < silhouetteTex.height; j++)
 		{
-			var silhouettePixel = silhouetteTex.GetPixel(i, j).a == 0;
-			var snackPixel = snacksTex.GetPixel(i, j).a == 0;
+			var silhouettePixel = silhouetteTex.GetPixel(i, j).a != 0;
+			var snackPixel = snacksTex.GetPixel(i, j).a != 0;
 
 			if (silhouettePixel)
 			{
@@ -98,7 +98,7 @@ public class Silhouette : MonoBehaviour
 					matchingPixellos++;
 			}
 			else if (snackPixel)
-				matchingPixellos -= 0.5f;
+				matchingPixellos--;
 		}
 
 		// clean up textures

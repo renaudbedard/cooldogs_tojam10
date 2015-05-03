@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropSnackLayers:
     serializedVersion: 2
-    m_Bits: 4294965960
+    m_Bits: 4294963912
   heldSnacksLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -124,8 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5638de83b9f53dc41ae910e6ff09dbc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentPhase: 0
-  customerSpawner: {fileID: 0}
   garageDoor: {fileID: 0}
 --- !u!124 &12445396
 Behaviour:
