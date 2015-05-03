@@ -21,6 +21,7 @@ public class SnackPicker : MonoBehaviour {
 	public LayerMask snacksOnly;
 
 	public GameObject Cursor;
+	HingeJoint lastJoint;
 
 
 	// Use this for initialization
@@ -49,7 +50,14 @@ public class SnackPicker : MonoBehaviour {
 						heldSnack = selectedSnack;
 						heldSnack.GetComponent<SpriteRenderer>().sortingOrder = lastLayer + 1;
 						holdOffset = heldSnack.transform.position - clickHit.point;
-						heldSnack.GetComponent<Rigidbody>().isKinematic = false;
+
+						Cursor.transform.position = clickHit.point;
+
+						var snackRB = heldSnack.GetComponent<Rigidbody>();
+						snackRB.isKinematic = false;
+						lastJoint = Cursor.AddComponent<HingeJoint>();
+						lastJoint.axis = new Vector3(0, 0, 1);
+						lastJoint.connectedBody = snackRB;
 					}
 				}
 			}
@@ -67,12 +75,21 @@ public class SnackPicker : MonoBehaviour {
 			heldSnack.GetComponent<SpriteRenderer>().sortingOrder = lastLayer;
 			lastLayer++;
 			heldSnack.GetComponent<Rigidbody>().isKinematic = true;
+			heldSnack.GetComponent<Rigidbody>().velocity = Vector3.zero;
+			heldSnack.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
+			if (lastJoint)
+			{
+				Destroy(lastJoint);
+				lastJoint = null;
+			}
+
 			heldSnack = null;
 		}
 
 		if (heldSnack != null) {
 			Physics.Raycast (clickRay, out clickHit, 500f, heldSnacksLayer);
-			heldSnack.transform.position = clickHit.point + holdOffset;
+			Cursor.transform.position = clickHit.point;
 		}
 	}
 }

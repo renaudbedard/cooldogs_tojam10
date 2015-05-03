@@ -22,8 +22,8 @@ public class Snack : MonoBehaviour {
 			Destroy(gameObject.GetComponent<Rigidbody>());
 		var rigidBody = gameObject.AddComponent<Rigidbody>();
 		rigidBody.isKinematic = true;
-		rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY |
-		                        RigidbodyConstraints.FreezePositionZ;
+		rigidBody.angularDrag = 1;
+		rigidBody.mass = 100;
 	}
 
 	public void Update() 
