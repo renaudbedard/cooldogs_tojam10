@@ -943,7 +943,7 @@ MonoBehaviour:
   - {fileID: 21300004, guid: c143be4f2f63e30409f1bb56ca02f647, type: 3}
   - {fileID: 21300006, guid: c143be4f2f63e30409f1bb56ca02f647, type: 3}
   - {fileID: 21300000, guid: c143be4f2f63e30409f1bb56ca02f647, type: 3}
-  FailThreshold: 0
+  FailThreshold: .600000024
 --- !u!114 &11441510
 MonoBehaviour:
   m_ObjectHideFlags: 1
