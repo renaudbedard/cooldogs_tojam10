@@ -20,13 +20,24 @@ public class Customers : MonoBehaviour {
 	Transform windowCenter;
 
 	[SerializeField]
-	GameObject CustomerTemplate;
+	GameObject[] CustomerTemplates;
+
+	[SerializeField]
+	SkyColours sky;
 	
 	void Awake() {
 		Instance = this;
 		DontDestroyOnLoad(gameObject);
 
-		SpawnPaths = GetComponents<iTweenPath>();
+		SpawnPaths = GetComponentsInChildren<iTweenPath>();
+	}
+
+	void Update () {
+		if (Input.GetKeyDown (KeyCode.A)) {
+			//Flow.CurrentPhase = Flow.Phase.CustomerEnter;
+			SpawnNextCustomer();
+			sky.ChangeColour();
+		}
 	}
 
 	public void SpawnNextCustomer() {
@@ -34,14 +45,14 @@ public class Customers : MonoBehaviour {
 
 		DestroyCurrentCustomer();
 
-		currentSpawnPath = SpawnPaths.Shuffle ().First ();
+		currentSpawnPath = SpawnPaths.Shuffle().First();
 		
-		var obj = Instantiate(CustomerTemplate, currentSpawnPath.nodes.First(), Quaternion.identity) as GameObject;
+		var obj = Instantiate(CustomerTemplates[UnityEngine.Random.Range(0, CustomerTemplates.Length)], currentSpawnPath.nodes.First(), Quaternion.identity) as GameObject;
 		currentCustomer = obj.GetComponent<Customer>();
 
 		iTween.MoveTo(currentCustomer.gameObject, iTween.Hash("path", currentSpawnPath.nodes.ToArray(),
 		                                                      "easeType", "easeOutQuad",
-		                                                      "time", 6f,
+		                                                      "time", 2f,
 		                                                      "oncomplete", "CustomerEnterFinish",
 		                                                      "onCompleteTarget", gameObject));
 	}

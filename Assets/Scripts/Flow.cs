@@ -30,6 +30,8 @@ public class Flow : MonoBehaviour
 
 	[SerializeField]
 	GameObject garageDoor;
+	[SerializeField]
+	SkyColours sky;
 	Vector3 garageClosedPosition;
 	Vector3 garageOpenPosition;
 
@@ -79,6 +81,7 @@ public class Flow : MonoBehaviour
 			}
 			break;
 		case Phase.GiveOut:
+			sky.ChangeColour();
 			cameraMover.LookingAtWindow = true;
 			CurrentPhase = Phase.Verdict;
 			break;
