@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraMover : MonoBehaviour {
 
-	public bool LookingAtWindow = false;
+	public bool LookingAtWindow = true;
 	public float lookSpeed = 5f;
 	Quaternion WindowTargetRotation = new Quaternion(0f,0f,0f,1f);
 	Quaternion CounterTargetRotation = new Quaternion(0.4f,0f,0f,0.9f);
@@ -16,10 +16,6 @@ public class CameraMover : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			ToggleMode();
-			Debug.Log (transform.rotation);
-		}
 		if (LookingAtWindow) {
 			targetRotation = WindowTargetRotation;
 		} else {
@@ -30,7 +26,7 @@ public class CameraMover : MonoBehaviour {
 		transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, lookSpeed * Time.deltaTime);
 	}
 
-	void ToggleMode() {
+	public void ToggleMode() {
 		LookingAtWindow = !LookingAtWindow;
 	}
 }

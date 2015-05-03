@@ -40,7 +40,8 @@ public class SnackPicker : MonoBehaviour {
 					}
 				}
 			}
-		} else if (Input.GetMouseButtonUp (0) && heldSnack != null) {
+		}
+		if (Input.GetMouseButtonUp (0) && heldSnack != null) {
 			if (Physics.Raycast (clickRay, out clickHit, 500f, dropSnackLayers)) {
 				cookingMat = clickHit.collider.GetComponent<CookingMat>();
 				if (cookingMat != null) {
@@ -48,8 +49,8 @@ public class SnackPicker : MonoBehaviour {
 						cookingMat.RecieveSnack(heldSnack);
 					}
 				}
-				heldSnack = null;
 			}
+			heldSnack = null;
 		}
 
 		if (heldSnack != null) {

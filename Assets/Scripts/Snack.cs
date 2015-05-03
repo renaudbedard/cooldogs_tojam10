@@ -16,7 +16,6 @@ public class Snack : MonoBehaviour {
 		// TODO : resize based on sprite bounds?
 	}
 
-	public void Update()
-	{
+	public void Update() {
 	}
 }

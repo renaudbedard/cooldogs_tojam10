@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 461608}
   - 212: {fileID: 21280686}
-  - 65: {fileID: 6561824}
+  - 65: {fileID: 6578666}
   m_Layer: 0
   m_Name: counter
   m_TagString: Untagged
@@ -746,7 +746,7 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6561824
+--- !u!65 &6578666
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -756,8 +756,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .159999996, y: .159999982, z: .100000001}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.02400005, y: .511999965, z: .199999988}
+  m_Center: {x: 0, y: 0, z: 3.81469727e-06}
 --- !u!65 &6583062
 BoxCollider:
   m_ObjectHideFlags: 1
