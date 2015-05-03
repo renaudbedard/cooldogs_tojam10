@@ -108,4 +108,8 @@ public class Customers : MonoBehaviour {
 	{
 		currentCustomer.Talk();
 	}
+	public void CustomerOuch()
+	{
+		currentCustomer.Ouch();
+	}
 }

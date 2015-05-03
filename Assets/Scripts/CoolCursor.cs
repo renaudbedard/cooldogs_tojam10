@@ -47,6 +47,13 @@ public class CoolCursor : MonoBehaviour
 			sr.sprite = handOpen;
 		}
 		Cursor.visible = false;
+
+		// try a ray from the camera to the cursor position, see if it hits a dude
+		Ray customerRay = new Ray(mainCamera.transform.position, Vector3.Normalize(transform.position - mainCamera.transform.position));
+		if (Input.GetMouseButtonDown(0) && Physics.Raycast(customerRay, out clickHit, 500f, LayerMask.GetMask("Customers")))
+		{
+			Customers.Instance.CustomerOuch();
+		}
 	}
 
 	void OnDrawGizmos() {

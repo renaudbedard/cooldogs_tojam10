@@ -10,7 +10,18 @@ public class Customer : MonoBehaviour {
 	public AudioClip[] TalkAudios;
 	public AudioClip PainAudio;
 
+	int lastTalkFrame;
+	public Sprite[] TalkFrames;
+	public Sprite IdleFrame;
+
 	public bool LikesGarbage;
+	bool talking;
+	float sinceChangedSprite;
+
+	SpriteRenderer spriteRenderer;
+	AudioSource audioSource;
+
+	public float TalkChangeSpriteSpeed;
 
 	void Start() {
 		rotationAmount = UnityEngine.Random.Range (0f, 6f);
@@ -20,20 +31,56 @@ public class Customer : MonoBehaviour {
 		                                          "speed", rotationSpeed,
 		                                          "loopType", "pingPong",
 		                                          "easeType", "easeInOutQuad"));
+
+		spriteRenderer = GetComponent<SpriteRenderer>();
+		audioSource = GetComponent<AudioSource>();
+
+		spriteRenderer.sprite = IdleFrame;
 	}
 
-	public void Update()
+	void Update()
 	{
-		
+		if (talking)
+		{
+			sinceChangedSprite += Time.deltaTime;
+			if (sinceChangedSprite > TalkChangeSpriteSpeed)
+			{
+				sinceChangedSprite -= TalkChangeSpriteSpeed;
+
+				lastTalkFrame++;
+				if (lastTalkFrame >= TalkFrames.Length)
+					lastTalkFrame = 0;
+				spriteRenderer.sprite = TalkFrames[lastTalkFrame];
+			}
+
+			if (!audioSource.isPlaying)
+			{
+				talking = false;
+				spriteRenderer.sprite = IdleFrame;
+			}
+		}
 	}
 
 	public void Talk()
 	{
-		GetComponent<AudioSource>().PlayOneShot(TalkAudios.Shuffle().First());
+		audioSource.pitch = Random.Range(0.95f, 1.05f);
+		audioSource.clip = TalkAudios.Shuffle().First();
+		audioSource.Play();
+		talking = true;
 	}
 
 	public void Ouch()
 	{
-		GetComponent<AudioSource>().PlayOneShot(PainAudio);
+		audioSource.pitch = Random.Range(0.9f, 1.1f);
+		audioSource.PlayOneShot(PainAudio);
+
+		StartCoroutine(SwitchFrame());
+	}
+
+	IEnumerator SwitchFrame()
+	{
+		spriteRenderer.sprite = TalkFrames.Shuffle().First();
+		yield return new WaitForSeconds(0.25f);
+		spriteRenderer.sprite = IdleFrame;
 	}
 }
