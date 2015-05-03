@@ -84,11 +84,13 @@ public class RecipeContainer : MonoBehaviour {
 			                                             "onstartparams", newRecipeIcon));
 			RecipeIcons.Add(newRecipeIcon);
 		}
-		Customers.Instance.CustomerOrderFinish();
 	}
 
 	void EnableIconRenderer(GameObject icon){
 		icon.GetComponent<SpriteRenderer>().enabled = true;
+		if (RecipeIcons.IndexOf (icon) >= RecipeIcons.Count - 1) {
+			Customers.Instance.CustomerOrderFinish();
+		}
 	}
 
 	public void DestroyRecipe() {

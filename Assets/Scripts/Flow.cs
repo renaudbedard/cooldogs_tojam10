@@ -54,8 +54,8 @@ public class Flow : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.Space)) {
 				CurrentPhase = Phase.Waiting;
 				iTween.MoveTo(garageDoor, iTween.Hash("position", garageOpenPosition,
-				                                      "easeType", "easeInOutQuad",
-				                                      "time", 3.5f,
+				                                      "easeType", "easeInQuad",
+				                                      "time", 2f,
 				                                      "oncomplete", "GarageDoorOpenFinish",
 				                                      "onCompleteTarget", gameObject));
 			}
@@ -76,6 +76,7 @@ public class Flow : MonoBehaviour
 		case Phase.Prepare: 
 			cameraMover.LookingAtWindow = false;
 			if (Input.GetKeyDown(KeyCode.Space)) {
+				//if ()
 				CurrentPhase = Phase.GiveOut;
 			}
 			break;

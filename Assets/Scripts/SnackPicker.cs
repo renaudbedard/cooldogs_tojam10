@@ -63,6 +63,18 @@ public class SnackPicker : MonoBehaviour {
 			}
 		}
 		if (Input.GetMouseButtonUp (0) && heldSnack != null) {
+
+			heldSnack.GetComponent<SpriteRenderer>().sortingOrder = lastLayer;
+			lastLayer++;
+			heldSnack.GetComponent<Rigidbody>().isKinematic = true;
+			heldSnack.GetComponent<Rigidbody>().velocity = Vector3.zero;
+			heldSnack.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+			
+			if (lastJoint) {
+				Destroy(lastJoint);
+				lastJoint = null;
+			}
+
 			if (Physics.Raycast (clickRay, out clickHit, 500f, dropSnackLayers)) {
 				cookingMat = clickHit.collider.GetComponent<CookingMat>();
 				if (cookingMat != null) {
@@ -70,18 +82,6 @@ public class SnackPicker : MonoBehaviour {
 						cookingMat.RecieveSnack(heldSnack);
 					}
 				}
-			}
-
-			heldSnack.GetComponent<SpriteRenderer>().sortingOrder = lastLayer;
-			lastLayer++;
-			heldSnack.GetComponent<Rigidbody>().isKinematic = true;
-			heldSnack.GetComponent<Rigidbody>().velocity = Vector3.zero;
-			heldSnack.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-
-			if (lastJoint)
-			{
-				Destroy(lastJoint);
-				lastJoint = null;
 			}
 
 			heldSnack = null;
