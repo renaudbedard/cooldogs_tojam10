@@ -31,6 +31,38 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &121888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 487584}
+  - 114: {fileID: 11494338}
+  m_Layer: 0
+  m_Name: spawnPath6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &131220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 457690}
+  - 114: {fileID: 11469654}
+  m_Layer: 0
+  m_Name: spawnPath4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &131232
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,7 +73,7 @@ GameObject:
   - 4: {fileID: 412566}
   - 114: {fileID: 11444834}
   m_Layer: 0
-  m_Name: spawnPath4
+  m_Name: spawnPath5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +179,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 446250}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!4 &422822
 Transform:
   m_ObjectHideFlags: 1
@@ -187,7 +219,9 @@ Transform:
   - {fileID: 409640}
   - {fileID: 405270}
   - {fileID: 425844}
+  - {fileID: 457690}
   - {fileID: 412566}
+  - {fileID: 487584}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &454764
@@ -202,6 +236,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 446250}
   m_RootOrder: 0
+--- !u!4 &457690
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131220}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 446250}
+  m_RootOrder: 5
+--- !u!4 &487584
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121888}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 446250}
+  m_RootOrder: 7
 --- !u!114 &11412384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -234,12 +292,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: enterPath4
+  pathName: enterPath5orient
   pathColor: {r: 1, g: .724137902, b: 0, a: 1}
   nodes:
-  - {x: .590107918, y: -5.3984499, z: 36.4633064}
-  - {x: -.890384674, y: -1.70052147, z: 11.9419136}
-  - {x: .0259050131, y: -1.06622028, z: 1.84450626}
+  - {x: 13.6450634, y: 1.41003799, z: 6.68759871}
+  - {x: 6.29803371, y: 2.51178837, z: 7.39722061}
+  - {x: 2.18589544, y: -.484077454, z: 7.25444365}
   nodeCount: 3
   initialized: 1
   initialName: New Path 4
@@ -272,6 +330,27 @@ MonoBehaviour:
   - {fileID: 174284, guid: edf62bc0add9441b9a2955609a36faaf, type: 2}
   sky: {fileID: 11493960}
   recipeContainer: {fileID: 0}
+--- !u!114 &11469654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: enterPath4
+  pathColor: {r: 1, g: .724137902, b: 0, a: 1}
+  nodes:
+  - {x: .590107918, y: -7.32100582, z: 43.6052742}
+  - {x: -.890384674, y: -2.54480553, z: 14.5500784}
+  - {x: .0259050131, y: -1.02396679, z: 1.84450626}
+  nodeCount: 3
+  initialized: 1
+  initialName: New Path 4
+  pathVisible: 1
 --- !u!114 &11483276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -339,6 +418,30 @@ MonoBehaviour:
   - {r: .352887124, g: .732904077, b: .786764741, a: 1}
   - {r: .981338739, g: .661764741, b: 1, a: 1}
   - {r: .705882311, g: .987829566, b: 1, a: 1}
+--- !u!114 &11494338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: enterPath6
+  pathColor: {r: 1, g: .475862056, b: 0, a: 1}
+  nodes:
+  - {x: 2.19149995, y: -9.46611786, z: 6.90259695}
+  - {x: -1.47294116, y: -4.83359814, z: 7.04964542}
+  - {x: 1.59354436, y: -2.99821472, z: 6.70026875}
+  - {x: -.782736182, y: -1.65674305, z: 6.45849228}
+  - {x: .902597904, y: -.812012672, z: 6.49899101}
+  - {x: -.189613581, y: .349488258, z: 6.33468437}
+  nodeCount: 6
+  initialized: 1
+  initialName: New Path 4
+  pathVisible: 1
 --- !u!212 &21234928
 SpriteRenderer:
   m_ObjectHideFlags: 1
