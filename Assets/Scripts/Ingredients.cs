@@ -86,7 +86,8 @@ class Ingredients : MonoBehaviour
 		Dictionary<string, int> ret;
 		if (FoodsToSnacks.TryGetValue(ingredient, out ret))
 			return ret;
-		return SnacksToFoods[ingredient];
+		ret = SnacksToFoods[ingredient];
+		return ret;
 	}
 
 	public List<string> GetRecipe(int ingredientCount, bool snacks)
@@ -141,32 +142,42 @@ class Ingredients : MonoBehaviour
 
 		int points = 0;
 
-		foreach (var recipeIngredient in recipe.ToArray())
-		{
-			// check for a good-matching ingredient in provided stuff (and eliminate)
-			foreach (var ingredient in chosenIngredients.ToArray())
+		for (int scoreCheck = 2; scoreCheck > 0; scoreCheck--)
+			foreach (var recipeIngredient in recipe.ToArray())
 			{
-				var dict = GetIngredientLikeness(ingredient);
-				int score;
-				if (dict.TryGetValue(recipeIngredient, out score))
+				// check for a good-matching ingredient in provided stuff (and eliminate)
+				foreach (var ingredient in chosenIngredients.ToArray())
 				{
-					if (score == 1)
-					{
-						points++;
-						chosenIngredients.Remove(ingredient);
-						recipe.Remove(recipeIngredient);
-						break;
-					}
-					else if (score == 2)
+					var dict = GetIngredientLikeness(ingredient);
+					int score;
+
+					if (ingredient == recipeIngredient)
 					{
 						points += 2;
 						chosenIngredients.Remove(ingredient);
 						recipe.Remove(recipeIngredient);
 						break;
 					}
+
+					if (dict.TryGetValue(recipeIngredient, out score))
+					{
+						if (score == 2 && scoreCheck == 2)
+						{
+							points += 2;
+							chosenIngredients.Remove(ingredient);
+							recipe.Remove(recipeIngredient);
+							break;
+						}
+						if (score == 1 && scoreCheck == 1)
+						{
+							points++;
+							chosenIngredients.Remove(ingredient);
+							recipe.Remove(recipeIngredient);
+							break;
+						}
+					}
 				}
 			}
-		}
 
 		foreach (var recipeIngredient in recipe)
 		{
@@ -184,7 +195,7 @@ class Ingredients : MonoBehaviour
 		}
 
 		// unfulfilled = bad
-		points -= recipe.Count;
+		//points -= recipe.Count;
 
 		if (points >= recipeSize)
 			return 2;

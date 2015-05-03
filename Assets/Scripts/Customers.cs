@@ -77,4 +77,9 @@ public class Customers : MonoBehaviour {
 		bool satisfied = recipeContainer.RateRecipe();
 		recipeContainer.DestroyRecipe();
 	}
+
+	public bool CurrentEatsGarbage()
+	{
+		return currentCustomer.name.StartsWith("Cooldog10");
+	}
 }

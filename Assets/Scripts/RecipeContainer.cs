@@ -34,7 +34,7 @@ public class RecipeContainer : MonoBehaviour {
 		}
 		spriteRenderer.enabled = true;
 		bubbleWidth = spriteRenderer.bounds.size.x;
-		CurrentRecipe = Ingredients.Instance.GetRecipe(UnityEngine.Random.Range(2, 6), false);
+		CurrentRecipe = Ingredients.Instance.GetRecipe(UnityEngine.Random.Range(2, 6), Customers.Instance.CurrentEatsGarbage());
 		iTween.PunchScale(gameObject, iTween.Hash("amount", new Vector3(2f,1f,0f),
                                                   "time", 0.8f,
 		                                          "oncomplete", "AnimateIngredients",
@@ -53,13 +53,13 @@ public class RecipeContainer : MonoBehaviour {
 
 	public bool RateRecipe()
 	{
-		//float silhouetteMatch = Silhouette.TestMatch();
-		//float ingredientsMatch = Ingredients.Instance.GetScore(CurrentRecipe, FindObjectsOfType<Snack>().Where(x => x.placed).Select(x => x.snackType).ToList());
+		float silhouetteMatch = Silhouette.TestMatch();
+		float ingredientsMatch = Ingredients.Instance.GetScore(CurrentRecipe, FindObjectsOfType<Snack>().Where(x => x.placed).Select(x => x.snackType).ToList());
 
-		//Debug.Log("Ingredients : " + ingredientsMatch + ", Silhouette : " + silhouetteMatch);
+		bool win = ingredientsMatch >= 1 && silhouetteMatch > Silhouette.FailThreshold;
+		Debug.Log("Ingredients : " + ingredientsMatch + ", Silhouette : " + silhouetteMatch + " : WIN?" + win);
 
-		// todo
-		return true;
+		return win;
 	}
 
 	void AnimateIngredients() {

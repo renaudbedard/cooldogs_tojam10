@@ -21,6 +21,7 @@ public class IngredientSpawn : MonoBehaviour
 		var obj = Instantiate(Ingredients.Instance.SnackTemplate, transform.position, Quaternion.AngleAxis(60, Vector3.right)) as GameObject;
 		obj.GetComponent<SpriteRenderer>().sprite = Ingredients.Instance.Sprites.First(x => x.name == ingredientName);
 		obj.transform.parent = transform;
+		obj.GetComponent<Snack>().snackType = ingredientName;
 
 		lastSpawn = obj;
 	}
