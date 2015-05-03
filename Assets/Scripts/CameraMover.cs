@@ -8,7 +8,7 @@ public class CameraMover : MonoBehaviour {
 	public Camera mainCamera;
 
 	public bool LookingAtWindow = true;
-	public float lookSpeed = 5f;
+	public float lookSpeed;
 	Quaternion WindowTargetRotation = new Quaternion(0f,0f,0f,1f);
 	Quaternion CounterTargetRotation = new Quaternion(0.4f,0f,0f,0.9f);
 	Quaternion targetRotation;
@@ -18,6 +18,10 @@ public class CameraMover : MonoBehaviour {
 		DontDestroyOnLoad (gameObject);
 
 		mainCamera = GetComponent<Camera>();
+	}
+
+	public void SetLookSpeed(float speed = 100f) {
+		lookSpeed = speed;
 	}
 	
 	// Update is called once per frame

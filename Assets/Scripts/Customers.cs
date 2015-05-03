@@ -28,6 +28,9 @@ public class Customers : MonoBehaviour {
 
 	[SerializeField]
 	RecipeContainer recipeContainer;
+
+	[SerializeField]
+	iTweenPath cursorServingPath;
 	
 	void Awake() {
 		Instance = this;
@@ -69,7 +72,7 @@ public class Customers : MonoBehaviour {
 								                         	  "onCompleteTarget", recipeContainer.gameObject);
 
 		if (currentSpawnPath.pathName.Contains("orient")) {
-			currentCustomer.transform.Rotate(Vector3.forward, 90);
+			currentCustomer.transform.Rotate(Vector3.forward, 90f);
 		}
 
 		iTween.MoveTo (currentCustomer.gameObject, iTweenHash);
@@ -90,14 +93,47 @@ public class Customers : MonoBehaviour {
 
 	public void ServeCustomer(bool hasSnacks) {
 		if (hasSnacks) {
+			Flow.CurrentPhase = Flow.Phase.GiveOut; 
 			bool satisfied = recipeContainer.RateRecipe ();
 			recipeContainer.DestroyRecipe ();
-			Flow.CurrentPhase = Flow.Phase.GiveOut;
+			CoolCursor.Instance.hugCursor = false;
+			CoolCursor.Instance.handTargetPosition = cursorServingPath.nodes.First();
+
+			CameraMover.Instance.SetLookSpeed(50f);
+
+			System.Collections.Hashtable iTweenHash = iTween.Hash("path", currentSpawnPath.nodes.ToArray(),
+			                                                      "easeType", "easeOutQuad",
+			                                                      "time", 2f,
+			                                                      "delay", 0.2f,
+			                                                      "onstart", "StartServing",
+			                                                      "onstarttarget", gameObject,
+			                                                      "oncomplete", "CustomerServed",
+			                                                      "oncompletetarget", gameObject);
+
+			iTween.MoveTo (CoolCursor.Instance.gameObject, iTweenHash);
+			
 		} else {
 			iTween.PunchScale(recipeContainer.Silhouette.gameObject, iTween.Hash("amount", new Vector3(1f,1f,0f),
 							                                          "time", 0.2f));
 		}
 	}
+
+	void StartServing() {
+		CoolCursor.Instance.SetSprite("serve");
+		CoolCursor.Instance.hugTarget = false;
+		CameraMover.Instance.LookingAtWindow = true;
+	}
+
+	void CustomerServed() {
+		Debug.Log ("WOOOOOO");
+		CoolCursor.Instance.hugTarget = true;
+		CoolCursor.Instance.hugCursor = true;
+		
+		CameraMover.Instance.SetLookSpeed();
+
+		Flow.CurrentPhase = Flow.Phase.Verdict;
+	}
+
 
 	public bool CurrentEatsGarbage()
 	{

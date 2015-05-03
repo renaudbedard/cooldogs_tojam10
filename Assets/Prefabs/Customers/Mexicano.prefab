@@ -41,7 +41,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: .194000006
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TalkAudios:
-  - {fileID: 8300000, guid: 72035a517f675b64b9eb91621b94d5df, type: 3}
-  - {fileID: 8300000, guid: 75b5ea7cf9f6f5c46b5e5c62aba0516a, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   LikesGarbage: 0
 --- !u!212 &21205134
 SpriteRenderer:

@@ -27,7 +27,7 @@ public class Customer : MonoBehaviour {
 		rotationAmount = UnityEngine.Random.Range (0f, 6f);
 		rotationSpeed = UnityEngine.Random.Range (2f, 10f);
 		transform.RotateAround(transform.position, Vector3.forward, rotationAmount * -1f);
-		iTween.RotateTo (gameObject, iTween.Hash ("z", rotationAmount, 
+		iTween.RotateTo (gameObject, iTween.Hash ("z", rotationAmount,
 		                                          "speed", rotationSpeed,
 		                                          "loopType", "pingPong",
 		                                          "easeType", "easeInOutQuad"));
@@ -60,7 +60,7 @@ public class Customer : MonoBehaviour {
 			}
 		}
 	}
-
+	
 	public void Talk()
 	{
 		audioSource.pitch = Random.Range(0.95f, 1.05f);

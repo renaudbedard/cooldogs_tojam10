@@ -330,6 +330,7 @@ MonoBehaviour:
   - {fileID: 174284, guid: edf62bc0add9441b9a2955609a36faaf, type: 2}
   sky: {fileID: 11493960}
   recipeContainer: {fileID: 0}
+  cursorServingPath: {fileID: 0}
 --- !u!114 &11469654
 MonoBehaviour:
   m_ObjectHideFlags: 1
