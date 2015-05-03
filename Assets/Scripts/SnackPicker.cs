@@ -40,6 +40,10 @@ public class SnackPicker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Flow.CurrentPhase != Flow.Phase.Prepare) {
+			return; 
+		}
+		CoolCursor.Instance.hugCursor = true;
 		clickRay = camera.ScreenPointToRay (Input.mousePosition);
 		if (Input.GetMouseButtonDown (0)) {
 			Debug.DrawRay (transform.position + transform.forward, clickRay.direction * 500f);

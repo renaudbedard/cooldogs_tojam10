@@ -139,6 +139,7 @@ GameObject:
   - 4: {fileID: 423030}
   - 33: {fileID: 3365046}
   - 64: {fileID: 6424584}
+  - 114: {fileID: 11458396}
   m_Layer: 13
   m_Name: cursorCollideLayer
   m_TagString: Untagged
@@ -569,7 +570,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185152}
   m_LocalRotation: {x: -.165069371, y: -.687569916, z: .165069208, w: .687569559}
-  m_LocalPosition: {x: -7.45059978e-08, y: .569999993, z: 13.1000004}
+  m_LocalPosition: {x: 0, y: 1.17999995, z: 11.7399998}
   m_LocalScale: {x: 1.76653171, y: 1.76653254, z: 2.47220945}
   m_Children: []
   m_Father: {fileID: 492512}
@@ -1108,6 +1109,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ad4b1ba4e7f7143a130087068a5eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11458396
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: handServePath
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: .645010293, y: -7.23270798, z: -3.05500555}
+  - {x: -1.57894945, y: -4.47909737, z: 1.59383106}
+  - {x: -.0334322453, y: -3.45247555, z: 3.42269754}
+  - {x: -.945831299, y: -2.26876545, z: 5.16618729}
+  - {x: .214447021, y: -1.68369293, z: 7.3139782}
+  nodeCount: 5
+  initialized: 1
+  initialName: New Path 1
+  pathVisible: 1
 --- !u!114 &11465182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1125,6 +1149,8 @@ MonoBehaviour:
   handClosed: {fileID: 21300002, guid: ac771ee9e86e94e389a0dd273afd1c2b, type: 3}
   handOpen: {fileID: 21300000, guid: ac771ee9e86e94e389a0dd273afd1c2b, type: 3}
   handServe: {fileID: 21300004, guid: ac771ee9e86e94e389a0dd273afd1c2b, type: 3}
+  handTargetPosition: {x: 0, y: 0, z: 0}
+  hugCursor: 0
 --- !u!114 &11465914
 MonoBehaviour:
   m_ObjectHideFlags: 1
