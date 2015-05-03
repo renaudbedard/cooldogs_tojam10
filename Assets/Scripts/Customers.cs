@@ -71,4 +71,8 @@ public class Customers : MonoBehaviour {
 			Destroy (currentCustomer.gameObject);
 		}
 	}
+
+	public void ServeCustomer() {
+		recipeContainer.DestroyRecipe();
+	}
 }

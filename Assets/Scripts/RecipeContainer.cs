@@ -21,15 +21,18 @@ public class RecipeContainer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		spriteRenderer = GetComponent<SpriteRenderer> ();
-		bubbleWidth = spriteRenderer.bounds.size.x;
 		spriteRenderer.enabled = false;
 		RecipeIcons = new List<GameObject>();
 		SpawnPoints = SpawnPointsContainer.GetComponentsInChildren<IngredientSpawn>();
 	}
 	
 	public void GenerateRecipe() {
+		foreach (GameObject icon in RecipeIcons) {
+			Destroy(icon);
+		}
 		spriteRenderer.enabled = true;
-		CurrentRecipe = Ingredients.Instance.GetRecipe(3, false);
+		bubbleWidth = spriteRenderer.bounds.size.x;
+		CurrentRecipe = Ingredients.Instance.GetRecipe(UnityEngine.Random.Range(2, 6), false);
 		iTween.PunchScale(gameObject, iTween.Hash("amount", new Vector3(2f,1f,0f),
                                                   "time", 0.8f,
 		                                          "oncomplete", "AnimateIngredients",
@@ -44,17 +47,38 @@ public class RecipeContainer : MonoBehaviour {
 	}
 
 	void AnimateIngredients() {
-		foreach (string orderPart in CurrentRecipe) {
+		int orderIndex = 0;
+		string orderPart;
+		for (orderIndex = 0; orderIndex < CurrentRecipe.Count; orderIndex++) {
+			orderPart = CurrentRecipe[orderIndex];
 			iconPosition = transform.position;
-			//iconPosition.x = ((bubbleWidth / (float)CurrentRecipe.Count) * (CurrentRecipe.IndexOf(orderPart) + 1f));
+			iconPosition.x += ((bubbleWidth / ((float)CurrentRecipe.Count)) * orderIndex) - (bubbleWidth/2f) + ((bubbleWidth / (float)CurrentRecipe.Count) / 2f);
 			newRecipeIcon = Instantiate(Ingredients.Instance.SnackTemplate, iconPosition, Quaternion.identity) as GameObject;
 			newRecipeIcon.GetComponent<SpriteRenderer>().sprite = Ingredients.Instance.Sprites.Where(i => i.name == orderPart).First();
 			newRecipeIcon.GetComponent<SpriteRenderer>().sortingOrder = 2;
+			newRecipeIcon.GetComponent<SpriteRenderer>().enabled = false;
+			newRecipeIcon.gameObject.layer = gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+			newRecipeIcon.transform.localScale /= 2f;
 			newRecipeIcon.transform.SetParent(gameObject.transform);
-			iTween.PunchScale(newRecipeIcon, iTween.Hash("amount", new Vector3(1f,1f,0f),
-			                                          	 "time", 0.3f));
+			iTween.PunchScale(newRecipeIcon, iTween.Hash("amount", new Vector3(1f,1f,1f),
+			                                          	 "time", 0.3f,
+			                                             "delay", orderIndex/2f,
+			                                             "onstart", "EnableIconRenderer",
+			                                             "onstarttarget", gameObject,
+			                                             "onstartparams", newRecipeIcon));
 			RecipeIcons.Add(newRecipeIcon);
 		}
 		Customers.Instance.CustomerOrderFinish();
+	}
+
+	void EnableIconRenderer(GameObject icon){
+		icon.GetComponent<SpriteRenderer>().enabled = true;
+	}
+
+	public void DestroyRecipe() {
+		foreach (GameObject icon in RecipeIcons) {
+			Destroy(icon);
+		}
+		spriteRenderer.enabled = false;
 	}
 }

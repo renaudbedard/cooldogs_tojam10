@@ -81,6 +81,7 @@ public class Flow : MonoBehaviour
 			break;
 		case Phase.GiveOut:
 			sky.ChangeColour();
+			Customers.Instance.ServeCustomer();
 			cameraMover.LookingAtWindow = true;
 			CurrentPhase = Phase.Verdict;
 			break;
@@ -102,7 +103,6 @@ public class Flow : MonoBehaviour
 		iTween.MoveTo(garageDoor, iTween.Hash("position", garageClosedPosition, "time", 0f));
 		cameraMover.LookingAtWindow = true;
 		Customers.Instance.doingThings = false;
-
 		snackPicker.Reset();
 		CurrentPhase = Phase.WaitingForStart;
 	}
