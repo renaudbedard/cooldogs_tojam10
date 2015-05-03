@@ -57,7 +57,7 @@ public class RecipeContainer : MonoBehaviour {
 		float ingredientsMatch = Ingredients.Instance.GetScore(CurrentRecipe, FindObjectsOfType<Snack>().Where(x => x.placed).Select(x => x.snackType).ToList());
 
 		bool win = ingredientsMatch >= 1 && silhouetteMatch > Silhouette.FailThreshold;
-		Debug.Log("Ingredients : " + ingredientsMatch + ", Silhouette : " + silhouetteMatch + " : WIN?" + win);
+		Debug.Log("Ingredients : " + ingredientsMatch + ", Silhouette : " + silhouetteMatch + " : WIN? " + win);
 
 		return win;
 	}
@@ -70,10 +70,12 @@ public class RecipeContainer : MonoBehaviour {
 			iconPosition = transform.position;
 			iconPosition.x += ((bubbleWidth / ((float)CurrentRecipe.Count)) * orderIndex) - (bubbleWidth/2f) + ((bubbleWidth / (float)CurrentRecipe.Count) / 2f);
 			newRecipeIcon = Instantiate(Ingredients.Instance.SnackTemplate, iconPosition, Quaternion.identity) as GameObject;
-			newRecipeIcon.GetComponent<SpriteRenderer>().sprite = Ingredients.Instance.Sprites.Where(i => i.name == orderPart).First();
-			newRecipeIcon.GetComponent<SpriteRenderer>().sortingOrder = 2;
-			newRecipeIcon.GetComponent<SpriteRenderer>().enabled = false;
+			newRecipeIcon.GetComponentInChildren<SpriteRenderer>().sprite = Ingredients.Instance.Sprites.Where(i => i.name == orderPart).First();
+			newRecipeIcon.GetComponentInChildren<SpriteRenderer>().sortingOrder = 2;
+			newRecipeIcon.GetComponentInChildren<SpriteRenderer>().enabled = false;
 			newRecipeIcon.gameObject.layer = gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+			newRecipeIcon.transform.localRotation = Quaternion.identity;
+			newRecipeIcon.transform.GetChild(0).localRotation = Quaternion.identity;
 			newRecipeIcon.transform.localScale /= 2f;
 			newRecipeIcon.transform.SetParent(gameObject.transform);
 			iTween.PunchScale(newRecipeIcon, iTween.Hash("amount", new Vector3(1f,1f,1f),
@@ -87,7 +89,7 @@ public class RecipeContainer : MonoBehaviour {
 	}
 
 	void EnableIconRenderer(GameObject icon){
-		icon.GetComponent<SpriteRenderer>().enabled = true;
+		icon.GetComponentInChildren<SpriteRenderer>().enabled = true;
 		if (RecipeIcons.IndexOf (icon) >= RecipeIcons.Count - 1) {
 			Customers.Instance.CustomerOrderFinish();
 		}

@@ -57,7 +57,7 @@ public class Silhouette : MonoBehaviour
 		gameObject.layer = 0;
 		foreach (var snack in FindObjectsOfType<Snack>())
 			if (snack.placed)
-				snack.gameObject.layer = LayerMask.NameToLayer("Silhouette");
+				SetLayerRecursively(snack.gameObject, LayerMask.NameToLayer("Silhouette"));
 
 		cam.Render();
 
@@ -69,7 +69,7 @@ public class Silhouette : MonoBehaviour
 		// revert
 		gameObject.layer = LayerMask.NameToLayer("Silhouette");
 		foreach (var snack in FindObjectsOfType<Snack>())
-			snack.gameObject.layer = LayerMask.NameToLayer("Snacks");
+			SetLayerRecursively(snack.gameObject, LayerMask.NameToLayer("Snacks"));
 
 		// cleanup
 		cam.targetTexture = null;
@@ -105,5 +105,11 @@ public class Silhouette : MonoBehaviour
 		Destroy(snacksTex);
 
 		return (float) matchingPixellos / expectedPixellos;
+	}
+
+	public static void SetLayerRecursively(GameObject go, int layerNumber)
+	{
+		foreach (Transform trans in go.GetComponentsInChildren<Transform>(true))
+			trans.gameObject.layer = layerNumber;
 	}
 }

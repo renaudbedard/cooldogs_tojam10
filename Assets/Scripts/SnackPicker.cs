@@ -29,7 +29,6 @@ public class SnackPicker : MonoBehaviour {
 		collider = gameObject.GetComponent<Collider> ();
 		camera = gameObject.GetComponent<Camera> ();
 		snackPrefab = Resources.Load("SnackPrefab") as GameObject;
-		Cursor = GetComponentInChildren<CoolCursor>().gameObject;
 	}
 
 	public void Reset()
@@ -45,15 +44,15 @@ public class SnackPicker : MonoBehaviour {
 			if (heldSnack == null) {
 				if (Physics.Raycast (clickRay, out clickHit, 500f, snacksOnly)) {
 					Debug.Log (clickHit.collider.gameObject.name);
-					selectedSnack = clickHit.collider.GetComponent<Snack>();
+					selectedSnack = clickHit.collider.transform.parent.GetComponent<Snack>();
 					if (selectedSnack && !selectedSnack.placed) {
 						heldSnack = selectedSnack;
-						heldSnack.GetComponent<SpriteRenderer>().sortingOrder = lastLayer + 1;
+						heldSnack.GetComponentInChildren<SpriteRenderer>().sortingOrder = lastLayer + 1;
 						holdOffset = heldSnack.transform.position - clickHit.point;
 
 						Cursor.transform.position = clickHit.point;
 
-						var snackRB = heldSnack.GetComponent<Rigidbody>();
+						var snackRB = heldSnack.GetComponentInChildren<Rigidbody>();
 						snackRB.isKinematic = false;
 						lastJoint = Cursor.AddComponent<HingeJoint>();
 						lastJoint.axis = new Vector3(0, 0, 1);
@@ -64,13 +63,14 @@ public class SnackPicker : MonoBehaviour {
 		}
 		if (Input.GetMouseButtonUp (0) && heldSnack != null) {
 
-			heldSnack.GetComponent<SpriteRenderer>().sortingOrder = lastLayer;
+			heldSnack.GetComponentInChildren<SpriteRenderer>().sortingOrder = lastLayer;
 			lastLayer++;
-			heldSnack.GetComponent<Rigidbody>().isKinematic = true;
-			heldSnack.GetComponent<Rigidbody>().velocity = Vector3.zero;
-			heldSnack.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-			
-			if (lastJoint) {
+			heldSnack.GetComponentInChildren<Rigidbody>().isKinematic = true;
+			heldSnack.GetComponentInChildren<Rigidbody>().velocity = Vector3.zero;
+			heldSnack.GetComponentInChildren<Rigidbody>().angularVelocity = Vector3.zero;
+
+			if (lastJoint)
+			{
 				Destroy(lastJoint);
 				lastJoint = null;
 			}
