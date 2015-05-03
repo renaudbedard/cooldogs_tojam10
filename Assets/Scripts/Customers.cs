@@ -24,6 +24,9 @@ public class Customers : MonoBehaviour {
 
 	[SerializeField]
 	SkyColours sky;
+
+	[SerializeField]
+	RecipeContainer recipeContainer;
 	
 	void Awake() {
 		Instance = this;
@@ -34,7 +37,6 @@ public class Customers : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.A)) {
-			//Flow.CurrentPhase = Flow.Phase.CustomerEnter;
 			SpawnNextCustomer();
 			sky.ChangeColour();
 		}
@@ -58,6 +60,8 @@ public class Customers : MonoBehaviour {
 	}
 	
 	void CustomerEnterFinish() {
+		//recipeContainer
+
 		Flow.CurrentPhase = Flow.Phase.CustomerSpeech;
 		doingThings = false;
 	}
