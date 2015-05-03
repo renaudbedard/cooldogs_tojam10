@@ -45,10 +45,11 @@ public class CoolCursor : MonoBehaviour {
 			return;
 		}
 		Cursor.visible = false;
-		if (hugCursor == true) {
+		RaycastHit clickHit;
+		if (hugCursor == true)
+		{
 			var clickRay = mainCamera.ScreenPointToRay (Input.mousePosition);
 			Debug.DrawRay (clickRay.origin, clickRay.direction * 500f);
-			RaycastHit clickHit;
 			if (Physics.Raycast (clickRay, out clickHit, 500f, Mask)) {
 				handTargetPosition = clickHit.point;
 			}
