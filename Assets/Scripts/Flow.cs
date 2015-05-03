@@ -33,6 +33,9 @@ public class Flow : MonoBehaviour
 	Vector3 garageClosedPosition;
 	Vector3 garageOpenPosition;
 
+	public int Failures;
+	public int Successes;
+
 	void Start() {
 		garageClosedPosition = garageDoor.transform.position;
 		garageOpenPosition = garageDoor.transform.position;

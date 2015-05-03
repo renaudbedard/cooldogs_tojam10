@@ -8,6 +8,7 @@ public class Customer : MonoBehaviour {
 	float rotationSpeed;
 
 	public AudioClip[] TalkAudios;
+	public AudioClip PainAudio;
 
 	public bool LikesGarbage;
 
@@ -21,8 +22,18 @@ public class Customer : MonoBehaviour {
 		                                          "easeType", "easeInOutQuad"));
 	}
 
+	public void Update()
+	{
+		
+	}
+
 	public void Talk()
 	{
 		GetComponent<AudioSource>().PlayOneShot(TalkAudios.Shuffle().First());
+	}
+
+	public void Ouch()
+	{
+		GetComponent<AudioSource>().PlayOneShot(PainAudio);
 	}
 }
