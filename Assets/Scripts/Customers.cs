@@ -95,6 +95,12 @@ public class Customers : MonoBehaviour {
 		if (hasSnacks) {
 			Flow.CurrentPhase = Flow.Phase.GiveOut; 
 			bool satisfied = recipeContainer.RateRecipe ();
+
+			if (!satisfied)
+			{ 
+				StartCoroutine(CameraMover.Instance.GetComponentInChildren<FailureMarks>().Show());
+			}
+
 			recipeContainer.DestroyRecipe ();
 			CoolCursor.Instance.hugCursor = false;
 			CoolCursor.Instance.handTargetPosition = cursorServingPath.nodes.First();

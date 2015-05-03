@@ -416,10 +416,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11447788, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
-      propertyPath: Cursor
-      value: 
-      objectReference: {fileID: 896262373}
     - target: {fileID: 11482058, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
       propertyPath: garageDoor
       value: 
@@ -428,6 +424,10 @@ Prefab:
       propertyPath: sky
       value: 
       objectReference: {fileID: 201861022}
+    - target: {fileID: 11447788, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 896262373}
     - target: {fileID: 11431394, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
       propertyPath: SpawnPointsContainer
       value: 
