@@ -101,16 +101,18 @@ class Ingredients : MonoBehaviour
 
 		int foodsCount = Mathf.RoundToInt((1 - snackiness) * ingredientCount);
 
+		bool[] ingredientIsFood = Enumerable.Repeat(true, foodsCount).Concat(Enumerable.Repeat(false, ingredientCount - foodsCount)).Shuffle().ToArray();
+		int atIngredient = 0;
+
 		// start by choosing one good matching ingredient for the recipe
 		foreach (var recipeIngredient in recipe)
 		{
-			if (foodsCount > 0)
-			{
+			if (ingredientIsFood[atIngredient])
 				ingredients.Add(recipeIngredient);
-				foodsCount--;
-			}
 			else
 				ingredients.Add(GetIngredientLikeness(recipeIngredient).Where(x => x.Value > 0).Shuffle().First().Key);
+
+			atIngredient++;
 		}
 
 		// special case for :cooldog:
@@ -120,13 +122,12 @@ class Ingredients : MonoBehaviour
 		// fill in the rest with random stuff
 		while (ingredients.Count < ingredientCount)
 		{
-			if (foodsCount > 0)
-			{
+			if (ingredientIsFood[atIngredient])
 				ingredients.Add(relativeFoods.Keys.Except(ingredients).Shuffle().First());
-				foodsCount--;
-			}
 			else
 				ingredients.Add(relativeSnacks.Keys.Except(ingredients).Shuffle().First());
+
+			atIngredient++;
 		}
 
 		return ingredients.Shuffle().ToList(); // DAT EFFICIENCY
