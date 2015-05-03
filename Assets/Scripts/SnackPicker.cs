@@ -16,6 +16,8 @@ public class SnackPicker : MonoBehaviour {
 	int lastLayer;
 	Vector3 holdOffset;
 
+	public bool hasSnacksOnPlate = false;
+
 	public LayerMask dropSnackLayers;
 	public LayerMask heldSnacksLayer;
 	public LayerMask snacksOnly;
@@ -32,9 +34,9 @@ public class SnackPicker : MonoBehaviour {
 		Cursor = GetComponentInChildren<CoolCursor>().gameObject;
 	}
 
-	public void Reset()
-	{
+	public void Reset() {
 		lastLayer = 0;
+		hasSnacksOnPlate = false;
 	}
 	
 	// Update is called once per frame
@@ -80,6 +82,7 @@ public class SnackPicker : MonoBehaviour {
 				if (cookingMat != null) {
 					if (heldSnack != null) {
 						cookingMat.RecieveSnack(heldSnack);
+						hasSnacksOnPlate = true;
 					}
 				}
 			}

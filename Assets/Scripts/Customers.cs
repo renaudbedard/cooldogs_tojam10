@@ -72,14 +72,18 @@ public class Customers : MonoBehaviour {
 		}
 	}
 
-	public void ServeCustomer()
-	{
-		bool satisfied = recipeContainer.RateRecipe();
-		recipeContainer.DestroyRecipe();
+	public void ServeCustomer(bool hasSnacks) {
+		if (hasSnacks) {
+			bool satisfied = recipeContainer.RateRecipe ();
+			recipeContainer.DestroyRecipe ();
+			Flow.CurrentPhase = Flow.Phase.GiveOut;
+		} else {
+			iTween.PunchScale(recipeContainer.Silhouette.gameObject, iTween.Hash("amount", new Vector3(1f,1f,0f),
+							                                          "time", 0.2f));
+		}
 	}
 
-	public bool CurrentEatsGarbage()
-	{
+	public bool CurrentEatsGarbage() {
 		return currentCustomer.name.StartsWith("Cooldog10");
 	}
 }
