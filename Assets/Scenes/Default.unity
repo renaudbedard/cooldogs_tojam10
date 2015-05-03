@@ -256,6 +256,48 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2054604975}
   m_Script: {fileID: 11500000, guid: 2b94aae8064d24719a1ad7401b87a254, type: 3}
+--- !u!1001 &1217035304
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 411000, guid: 19016f1636eb94c1887bc0c8f3d02325, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.8472966
+      objectReference: {fileID: 0}
+    - target: {fileID: 411000, guid: 19016f1636eb94c1887bc0c8f3d02325, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 7.90990925
+      objectReference: {fileID: 0}
+    - target: {fileID: 411000, guid: 19016f1636eb94c1887bc0c8f3d02325, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -10.3327923
+      objectReference: {fileID: 0}
+    - target: {fileID: 411000, guid: 19016f1636eb94c1887bc0c8f3d02325, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 411000, guid: 19016f1636eb94c1887bc0c8f3d02325, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 411000, guid: 19016f1636eb94c1887bc0c8f3d02325, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 411000, guid: 19016f1636eb94c1887bc0c8f3d02325, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 411000, guid: 19016f1636eb94c1887bc0c8f3d02325, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 19016f1636eb94c1887bc0c8f3d02325, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1250457294
 Prefab:
   m_ObjectHideFlags: 0
@@ -326,7 +368,7 @@ Transform:
   - {fileID: 292246468}
   - {fileID: 1619471869}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1001 &1612788606
 Prefab:
   m_ObjectHideFlags: 0
@@ -476,7 +518,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 446250, guid: e899a5e51e09d4a3b88800b2e792574a, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11469206, guid: e899a5e51e09d4a3b88800b2e792574a, type: 2}
       propertyPath: recipeContainer

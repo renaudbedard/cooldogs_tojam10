@@ -62,11 +62,17 @@ public class Customers : MonoBehaviour {
 		currentCustomer = obj.GetComponent<Customer>();
 		lastCustomerName = customerTemplate.name;
 
-		iTween.MoveTo(currentCustomer.gameObject, iTween.Hash("path", currentSpawnPath.nodes.ToArray(),
-		                                                      "easeType", "easeOutQuad",
-		                                                      "time", 2f,
-		                                                      "oncomplete", "GenerateRecipe",
-		                                                      "onCompleteTarget", recipeContainer.gameObject));
+		System.Collections.Hashtable iTweenHash = iTween.Hash("path", currentSpawnPath.nodes.ToArray(),
+								                              "easeType", "easeOutQuad",
+								                              "time", 2f,
+								                              "oncomplete", "GenerateRecipe",
+								                         	  "onCompleteTarget", recipeContainer.gameObject);
+
+		if (currentSpawnPath.pathName.Contains("orient")) {
+			currentCustomer.transform.Rotate(Vector3.forward, 90);
+		}
+
+		iTween.MoveTo (currentCustomer.gameObject, iTweenHash);
 	}
 	
 	public void CustomerOrderFinish() {
