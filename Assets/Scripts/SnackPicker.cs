@@ -28,6 +28,7 @@ public class SnackPicker : MonoBehaviour {
 		collider = gameObject.GetComponent<Collider> ();
 		camera = gameObject.GetComponent<Camera> ();
 		snackPrefab = Resources.Load("SnackPrefab") as GameObject;
+		Cursor = GetComponentInChildren<CoolCursor>().gameObject;
 	}
 
 	public void Reset()

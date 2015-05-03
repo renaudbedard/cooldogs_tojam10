@@ -41,6 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snackType: 
+  placed: 0
 --- !u!212 &21263134
 SpriteRenderer:
   m_ObjectHideFlags: 1
