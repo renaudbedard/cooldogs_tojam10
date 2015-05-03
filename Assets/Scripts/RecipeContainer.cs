@@ -16,6 +16,8 @@ public class RecipeContainer : MonoBehaviour {
 	IngredientSpawn[] SpawnPoints;
 	public Transform SpawnPointsContainer;
 
+	public Silhouette Silhouette;
+
 	public float Snackiness;
 
 	// Use this for initialization
@@ -44,6 +46,9 @@ public class RecipeContainer : MonoBehaviour {
 			spawnPoint.Spawn(ingredients[i++]);
 
 		Snackiness = Mathf.Clamp01(Snackiness + 0.1f);
+
+		// randomize silhouette
+		Silhouette.Randomize();
 	}
 
 	void AnimateIngredients() {

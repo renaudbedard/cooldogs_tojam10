@@ -9,7 +9,6 @@ using UnityEngine;
 public class Silhouette : MonoBehaviour
 {
 	public Sprite[] SilhouetteTemplates;
-	public string Type;
 
 	public float FailThreshold;
 
@@ -17,21 +16,21 @@ public class Silhouette : MonoBehaviour
 
 	float match;
 
-	void Start()
+	public void Randomize()
 	{
 		sr = GetComponent<SpriteRenderer>();
-		sr.sprite = SilhouetteTemplates.SingleOrDefault(x => x.name == Type);
+		sr.sprite = SilhouetteTemplates.Shuffle().First();
 	}
 
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.T))
-		{
-			Debug.Log("Matches to " + TestMatch() + "%");
-		}
+		//if (Input.GetKeyDown(KeyCode.T))
+		//{
+		//	Debug.Log("Matches to " + TestMatch() + "%");
+		//}
 	}
 
-	float TestMatch()
+	public float TestMatch()
 	{
 		var rt = RenderTexture.GetTemporary((int) sr.sprite.textureRect.width, (int) sr.sprite.textureRect.height, 24,
 		                                    RenderTextureFormat.ARGB32,

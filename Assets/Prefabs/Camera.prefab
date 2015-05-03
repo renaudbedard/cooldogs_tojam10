@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPointsContainer: {fileID: 0}
+  Silhouette: {fileID: 0}
   Snackiness: 0
 --- !u!114 &11438026
 MonoBehaviour:

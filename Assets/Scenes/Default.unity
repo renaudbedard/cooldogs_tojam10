@@ -240,6 +240,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 353435456}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &493384718 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11433536, guid: 5754877db03fe4e80be0b94f8891d9df,
+    type: 2}
+  m_PrefabInternal: {fileID: 1883151759}
+  m_Script: {fileID: 11500000, guid: 0f85c363c7e16e045a5fed85583fceeb, type: 3}
 --- !u!1001 &531951726
 Prefab:
   m_ObjectHideFlags: 0
@@ -291,6 +297,10 @@ Prefab:
       propertyPath: SpawnPointsContainer
       value: 
       objectReference: {fileID: 2139393748}
+    - target: {fileID: 11431394, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
+      propertyPath: Silhouette
+      value: 
+      objectReference: {fileID: 493384718}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
   m_IsPrefabParent: 0
