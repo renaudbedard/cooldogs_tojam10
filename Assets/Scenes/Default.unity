@@ -347,9 +347,17 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11482058, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
+      propertyPath: customerSpawner
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11482058, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
       propertyPath: garageDoor
       value: 
       objectReference: {fileID: 353435456}
+    - target: {fileID: 11482058, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
+      propertyPath: StartingPhase
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
   m_IsPrefabParent: 0
