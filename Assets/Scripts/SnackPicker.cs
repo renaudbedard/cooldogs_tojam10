@@ -58,7 +58,10 @@ public class SnackPicker : MonoBehaviour {
 						snackRB.isKinematic = false;
 						lastJoint = Cursor.AddComponent<HingeJoint>();
 						lastJoint.axis = new Vector3(0, 0, 1);
+						//lastJoint.autoConfigureConnectedAnchor = false;
 						lastJoint.connectedBody = snackRB;
+
+						lastJoint.anchor -= new Vector3(0f,1.5f,0f);
 					}
 				}
 			}

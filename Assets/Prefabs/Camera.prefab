@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dead64ec798bf4135849877336ddaee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
   LookingAtWindow: 1
   lookSpeed: 100
 --- !u!114 &11447788

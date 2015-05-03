@@ -293,7 +293,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 411000, guid: 19016f1636eb94c1887bc0c8f3d02325, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19016f1636eb94c1887bc0c8f3d02325, type: 2}
@@ -406,7 +406,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 469360, guid: f37cee31538850f429f6b579243eaa79, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f37cee31538850f429f6b579243eaa79, type: 2}
@@ -452,8 +452,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 450890, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11447788, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 896262373}
     - target: {fileID: 11482058, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
       propertyPath: garageDoor
       value: 
@@ -462,10 +466,6 @@ Prefab:
       propertyPath: sky
       value: 
       objectReference: {fileID: 201861022}
-    - target: {fileID: 11447788, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
-      propertyPath: Cursor
-      value: 
-      objectReference: {fileID: 896262373}
     - target: {fileID: 11431394, guid: ddadc86384fc145aaa77d56161570d09, type: 2}
       propertyPath: SpawnPointsContainer
       value: 
@@ -518,7 +518,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 446250, guid: e899a5e51e09d4a3b88800b2e792574a, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11469206, guid: e899a5e51e09d4a3b88800b2e792574a, type: 2}
       propertyPath: recipeContainer

@@ -8,27 +8,48 @@ public class CoolCursor : MonoBehaviour
 {
 	public LayerMask Mask;
 
-	void Start()
-	{
-		
+	Camera mainCamera;
+	SpriteRenderer sr;
+
+	[SerializeField]
+	Sprite handClosed;
+	[SerializeField]
+	Sprite handOpen;
+	[SerializeField]
+	Sprite handServe;
+
+	Vector3 handTargetPosition;
+
+	void Start() {
+		mainCamera = CameraMover.Instance.mainCamera;
+		sr = GetComponent<SpriteRenderer> ();
 	}
 
-	void Update()
-	{
-		/*
-		var clickRay = GetComponentInParent<Camera>().ScreenPointToRay (Input.mousePosition);
+	void Update() {
+		Rect screenRect = new Rect(0,0, Screen.width, Screen.height);
+		if (!screenRect.Contains (Input.mousePosition)) {
+			sr.enabled = false;
+			return;
+		}
+		sr.enabled = true;
+		
+		var clickRay = mainCamera.ScreenPointToRay (Input.mousePosition);
 		Debug.DrawRay(clickRay.origin, clickRay.direction * 500f);
 		RaycastHit clickHit;
-		if (Physics.Raycast(clickRay, out clickHit, 500f, Mask))
-		{
-			Debug.Log(clickHit.collider.gameObject.name);
-			transform.position = clickHit.point;
+		if (Physics.Raycast(clickRay, out clickHit, 500f, Mask)) {
+			handTargetPosition = clickHit.point;
+			if(handTargetPosition.y > -1f) { handTargetPosition.y = -1f; }
+			transform.position = handTargetPosition;
 		}
-		 * */
+		if (Input.GetMouseButton (0)) {
+			sr.sprite = handClosed;
+		} else {
+			sr.sprite = handOpen;
+		}
+		Cursor.visible = false;
 	}
 
-	void OnDrawGizmos()
-	{
+	void OnDrawGizmos() {
 		HingeJoint hj;
 		if (hj = GetComponent<HingeJoint>())
 		{
