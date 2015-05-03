@@ -6,6 +6,7 @@ using System.Collections;
 public class Snack : MonoBehaviour {
 
 	public string snackType;
+	public bool placed;
 
 	public void Start()
 	{

@@ -15,6 +15,7 @@ public class CookingMat : MonoBehaviour {
 
 	public void RecieveSnack(Snack snack) {
 		Debug.Log("Placed Snack " + snack.snackType);
+		snack.placed = true;
 		//Vector3 snackPosition = snack.gameObject.transform.position;
 	}
 }
