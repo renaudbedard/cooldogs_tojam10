@@ -78,10 +78,10 @@ public class Silhouette : MonoBehaviour
 		Destroy(cam);
 
 		// debug
-		byte[] bytes = silhouetteTex.EncodeToPNG();
-		File.WriteAllBytes("C:\\silhouette.png", bytes);
-		bytes = snacksTex.EncodeToPNG();
-		File.WriteAllBytes("C:\\snacks.png", bytes);
+		//byte[] bytes = silhouetteTex.EncodeToPNG();
+		//File.WriteAllBytes("C:\\silhouette.png", bytes);
+		//bytes = snacksTex.EncodeToPNG();
+		//File.WriteAllBytes("C:\\snacks.png", bytes);
 
 		// compare
 		float matchingPixellos = 0, expectedPixellos = 0;
