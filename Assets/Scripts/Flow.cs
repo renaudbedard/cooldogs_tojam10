@@ -76,13 +76,11 @@ public class Flow : MonoBehaviour
 		case Phase.Prepare: 
 			cameraMover.LookingAtWindow = false;
 			if (Input.GetKeyDown(KeyCode.Space)) {
-				//if ()
-				CurrentPhase = Phase.GiveOut;
+				Customers.Instance.ServeCustomer(snackPicker.hasSnacksOnPlate);
 			}
 			break;
 		case Phase.GiveOut:
 			sky.ChangeColour();
-			Customers.Instance.ServeCustomer();
 			cameraMover.LookingAtWindow = true;
 			CurrentPhase = Phase.Verdict;
 			break;

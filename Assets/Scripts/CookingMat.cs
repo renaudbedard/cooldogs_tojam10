@@ -6,6 +6,10 @@ public class CookingMat : MonoBehaviour {
 	[SerializeField]
 	GameObject plateTemplate;
 
+	void Start() {
+		SpawnNewPlate();
+	}
+
 	public void RecieveSnack(Snack snack) {
 		Debug.Log("Placed Snack " + snack.snackType);
 		snack.placed = true;
@@ -14,6 +18,5 @@ public class CookingMat : MonoBehaviour {
 	}
 
 	public void SpawnNewPlate() {
-
 	}
 }
