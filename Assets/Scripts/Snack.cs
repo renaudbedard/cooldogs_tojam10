@@ -13,9 +13,20 @@ public class Snack : MonoBehaviour {
 		if (GetComponent<BoxCollider>() != null)
 			Destroy(gameObject.GetComponent<BoxCollider>());
 		gameObject.AddComponent<BoxCollider>();
-		// TODO : resize based on sprite bounds?
+
+		var size = GetComponent<BoxCollider>().size;
+		size.z = 0.01f;
+		GetComponent<BoxCollider>().size = size;
+
+		if (GetComponent<Rigidbody>() != null)
+			Destroy(gameObject.GetComponent<Rigidbody>());
+		var rigidBody = gameObject.AddComponent<Rigidbody>();
+		rigidBody.isKinematic = true;
+		rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY |
+		                        RigidbodyConstraints.FreezePositionZ;
 	}
 
-	public void Update() {
+	public void Update() 
+	{
 	}
 }

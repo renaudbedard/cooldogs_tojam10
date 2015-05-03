@@ -26,6 +26,7 @@ public class Flow : MonoBehaviour
 	public static Phase CurrentPhase;
 	
 	CameraMover cameraMover;
+	SnackPicker snackPicker;
 
 	[SerializeField]
 	GameObject garageDoor;
@@ -38,6 +39,7 @@ public class Flow : MonoBehaviour
 		garageOpenPosition.y += 6f;
 
 		cameraMover = GetComponent<CameraMover>();
+		snackPicker = GetComponent<SnackPicker>();
 
 		CurrentPhase = StartingPhase;
 	}
@@ -62,6 +64,7 @@ public class Flow : MonoBehaviour
 		case Phase.CustomerSpeech:
 			if (Input.GetKeyDown(KeyCode.Space)) {
 				CurrentPhase = Phase.Prepare;
+				snackPicker.Reset();
 			}
 			break;
 		case Phase.CustomerEnter:
@@ -98,6 +101,7 @@ public class Flow : MonoBehaviour
 		cameraMover.LookingAtWindow = true;
 		Customers.Instance.doingThings = false;
 
+		snackPicker.Reset();
 		CurrentPhase = Phase.WaitingForStart;
 	}
 }

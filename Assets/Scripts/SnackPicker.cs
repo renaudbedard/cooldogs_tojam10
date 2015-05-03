@@ -13,10 +13,14 @@ public class SnackPicker : MonoBehaviour {
 
 	GameObject snackPrefab;
 	Snack heldSnack;
+	int lastLayer;
+	Vector3 holdOffset;
 
 	public LayerMask dropSnackLayers;
 	public LayerMask heldSnacksLayer;
 	public LayerMask snacksOnly;
+
+	public GameObject Cursor;
 
 
 	// Use this for initialization
@@ -24,6 +28,11 @@ public class SnackPicker : MonoBehaviour {
 		collider = gameObject.GetComponent<Collider> ();
 		camera = gameObject.GetComponent<Camera> ();
 		snackPrefab = Resources.Load("SnackPrefab") as GameObject;
+	}
+
+	public void Reset()
+	{
+		lastLayer = 0;
 	}
 	
 	// Update is called once per frame
@@ -35,8 +44,11 @@ public class SnackPicker : MonoBehaviour {
 				if (Physics.Raycast (clickRay, out clickHit, 500f, snacksOnly)) {
 					Debug.Log (clickHit.collider.gameObject.name);
 					selectedSnack = clickHit.collider.GetComponent<Snack>();
-					if (selectedSnack) {
+					if (selectedSnack && !selectedSnack.placed) {
 						heldSnack = selectedSnack;
+						heldSnack.GetComponent<SpriteRenderer>().sortingOrder = lastLayer + 1;
+						holdOffset = heldSnack.transform.position - clickHit.point;
+						heldSnack.GetComponent<Rigidbody>().isKinematic = false;
 					}
 				}
 			}
@@ -50,12 +62,16 @@ public class SnackPicker : MonoBehaviour {
 					}
 				}
 			}
+
+			heldSnack.GetComponent<SpriteRenderer>().sortingOrder = lastLayer;
+			lastLayer++;
+			heldSnack.GetComponent<Rigidbody>().isKinematic = true;
 			heldSnack = null;
 		}
 
 		if (heldSnack != null) {
 			Physics.Raycast (clickRay, out clickHit, 500f, heldSnacksLayer);
-			heldSnack.transform.position = clickHit.point;
+			heldSnack.transform.position = clickHit.point + holdOffset;
 		}
 	}
 }
