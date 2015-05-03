@@ -11,9 +11,10 @@ public class Customers : MonoBehaviour {
 	public bool doingThings = false;
 	
 	Customer currentCustomer;
+	iTweenPath currentSpawnPath;
 
 	public Sprite[] Sprites;
-	private CustomerSpawn[] SpawnPoints;
+	private iTweenPath[] SpawnPaths;
 	
 	[SerializeField]
 	Transform windowCenter;
@@ -25,16 +26,20 @@ public class Customers : MonoBehaviour {
 		Instance = this;
 		DontDestroyOnLoad(gameObject);
 
-		SpawnPoints = GetComponentsInChildren<CustomerSpawn>();
+		SpawnPaths = GetComponents<iTweenPath>();
 	}
 
 	public void SpawnNextCustomer() {
 		doingThings = true;
+
+		DestroyCurrentCustomer();
+
+		currentSpawnPath = SpawnPaths.Shuffle ().First ();
 		
-		var obj = Instantiate(CustomerTemplate, transform.position, Quaternion.AngleAxis(60, Vector3.right)) as GameObject;
+		var obj = Instantiate(CustomerTemplate, currentSpawnPath.nodes.First(), Quaternion.identity) as GameObject;
 		currentCustomer = obj.GetComponent<Customer>();
-		
-		iTween.MoveTo(currentCustomer.gameObject, iTween.Hash("position", windowCenter,
+
+		iTween.MoveTo(currentCustomer.gameObject, iTween.Hash("path", currentSpawnPath.nodes.ToArray(),
 		                                                      "easeType", "easeInOut",
 		                                                      "time", 3.5f,
 		                                                      "oncomplete", "CustomerEnterFinish",
@@ -44,5 +49,11 @@ public class Customers : MonoBehaviour {
 	void CustomerEnterFinish() {
 		Flow.CurrentPhase = Flow.Phase.CustomerSpeech;
 		doingThings = false;
+	}
+
+	public void DestroyCurrentCustomer() {
+		if (currentCustomer != null) {
+			Destroy (currentCustomer.gameObject);
+		}
 	}
 }

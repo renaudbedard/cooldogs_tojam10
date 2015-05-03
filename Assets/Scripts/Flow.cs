@@ -19,6 +19,9 @@ public class Flow : MonoBehaviour
 		Lose
 	}
 
+	[SerializeField]
+	Phase StartingPhase = Phase.WaitingForStart;
+
 	public Order CurrentOrder;
 	public static Phase CurrentPhase;
 	
@@ -35,6 +38,8 @@ public class Flow : MonoBehaviour
 		garageOpenPosition.y += 6f;
 
 		cameraMover = GetComponent<CameraMover>();
+
+		CurrentPhase = StartingPhase;
 	}
 
 	void Update() {
