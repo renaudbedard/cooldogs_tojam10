@@ -49,6 +49,8 @@ public class RecipeContainer : MonoBehaviour {
 
 		// randomize silhouette
 		Silhouette.Randomize();
+
+		Customers.Instance.CustomerTalk();
 	}
 
 	public bool RateRecipe()

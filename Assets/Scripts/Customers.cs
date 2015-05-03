@@ -83,7 +83,13 @@ public class Customers : MonoBehaviour {
 		}
 	}
 
-	public bool CurrentEatsGarbage() {
-		return currentCustomer.name.StartsWith("Cooldog10");
+	public bool CurrentEatsGarbage()
+	{
+		return currentCustomer.LikesGarbage;
+	}
+
+	public void CustomerTalk()
+	{
+		currentCustomer.Talk();
 	}
 }

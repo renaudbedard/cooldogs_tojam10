@@ -1,10 +1,15 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using System.Collections;
 
 public class Customer : MonoBehaviour {
 
 	float rotationAmount;
 	float rotationSpeed;
+
+	public AudioClip[] TalkAudios;
+
+	public bool LikesGarbage;
 
 	void Start() {
 		rotationAmount = UnityEngine.Random.Range (0f, 6f);
@@ -14,5 +19,10 @@ public class Customer : MonoBehaviour {
 		                                          "speed", rotationSpeed,
 		                                          "loopType", "pingPong",
 		                                          "easeType", "easeInOutQuad"));
+	}
+
+	public void Talk()
+	{
+		GetComponent<AudioSource>().PlayOneShot(TalkAudios.Shuffle().First());
 	}
 }

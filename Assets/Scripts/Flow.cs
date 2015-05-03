@@ -21,7 +21,6 @@ public class Flow : MonoBehaviour
 	[SerializeField]
 	Phase StartingPhase = Phase.WaitingForStart;
 
-	public Order CurrentOrder;
 	public static Phase CurrentPhase;
 	
 	CameraMover cameraMover;
