@@ -12,6 +12,7 @@ public class Customers : MonoBehaviour {
 	
 	Customer currentCustomer;
 	iTweenPath currentSpawnPath;
+	string lastCustomerName;
 
 	public Sprite[] Sprites;
 	private iTweenPath[] SpawnPaths;
@@ -48,9 +49,18 @@ public class Customers : MonoBehaviour {
 		DestroyCurrentCustomer();
 
 		currentSpawnPath = SpawnPaths.Shuffle().First();
-		
-		var obj = Instantiate(CustomerTemplates[UnityEngine.Random.Range(0, CustomerTemplates.Length)], currentSpawnPath.nodes.First(), Quaternion.identity) as GameObject;
+
+		string newCustomerName;
+		GameObject customerTemplate;
+		do
+		{
+			customerTemplate = CustomerTemplates[UnityEngine.Random.Range(0, CustomerTemplates.Length)];
+			newCustomerName = customerTemplate.name;
+		} while (newCustomerName == lastCustomerName);
+
+		var obj = Instantiate(customerTemplate, currentSpawnPath.nodes.First(), Quaternion.identity) as GameObject;
 		currentCustomer = obj.GetComponent<Customer>();
+		lastCustomerName = customerTemplate.name;
 
 		iTween.MoveTo(currentCustomer.gameObject, iTween.Hash("path", currentSpawnPath.nodes.ToArray(),
 		                                                      "easeType", "easeOutQuad",
