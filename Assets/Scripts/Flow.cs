@@ -6,8 +6,7 @@ using UnityEngine;
 
 public class Flow : MonoBehaviour
 {
-	public enum Phase
-	{
+	public enum Phase {
 		WaitingForStart,
 		Waiting,
 		CustomerEnter,

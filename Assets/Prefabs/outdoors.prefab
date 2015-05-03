@@ -271,6 +271,7 @@ MonoBehaviour:
   - {fileID: 174284, guid: e2e4de914f41c43f89acec48da4e017e, type: 2}
   - {fileID: 174284, guid: edf62bc0add9441b9a2955609a36faaf, type: 2}
   sky: {fileID: 11493960}
+  recipeContainer: {fileID: 0}
 --- !u!114 &11483276
 MonoBehaviour:
   m_ObjectHideFlags: 1

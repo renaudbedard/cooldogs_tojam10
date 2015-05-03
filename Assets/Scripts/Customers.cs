@@ -55,16 +55,16 @@ public class Customers : MonoBehaviour {
 		iTween.MoveTo(currentCustomer.gameObject, iTween.Hash("path", currentSpawnPath.nodes.ToArray(),
 		                                                      "easeType", "easeOutQuad",
 		                                                      "time", 2f,
-		                                                      "oncomplete", "CustomerEnterFinish",
-		                                                      "onCompleteTarget", gameObject));
+		                                                      "oncomplete", "GenerateRecipe",
+		                                                      "onCompleteTarget", recipeContainer.gameObject));
 	}
 	
-	void CustomerEnterFinish() {
-		//recipeContainer
-
+	public void CustomerOrderFinish() {
 		Flow.CurrentPhase = Flow.Phase.CustomerSpeech;
 		doingThings = false;
 	}
+
+
 
 	public void DestroyCurrentCustomer() {
 		if (currentCustomer != null) {
