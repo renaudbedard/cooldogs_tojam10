@@ -25,17 +25,17 @@ class Ingredients : MonoBehaviour
 
 		// fill in friendly names
 		for (int i = 3; i < lines.Length; i++)
-			FriendlyNames.Add(lines[i][0], lines[i][1]);
+            FriendlyNames.Add(lines[i][0].Trim(), lines[i][1].Trim());
 		for (int i = 2; i < lines[0].Length; i++)
-			FriendlyNames.Add(lines[0][i], lines[1][i]);
+            FriendlyNames.Add(lines[0][i].Trim(), lines[1][i].Trim());
 
 		// snackz 2 foodz
 		for (int i = 3; i < lines.Length; i++)
 		{
 			var dict = new Dictionary<string, int>();
 			for (int j = 2; j < lines[i].Length; j++)
-				dict.Add(lines[0][j], int.Parse(lines[i][j]));
-			SnacksToFoods.Add(lines[i][0], dict);
+                dict.Add(lines[0][j].Trim(), int.Parse(lines[i][j]));
+			SnacksToFoods.Add(lines[i][0].Trim(), dict);
 		}
 
 		// foodz 2 snackz
@@ -43,8 +43,8 @@ class Ingredients : MonoBehaviour
 		{
 			var dict = new Dictionary<string, int>();
 			for (int i = 3; i < lines.Length; i++)
-				dict.Add(lines[i][0], int.Parse(lines[i][j]));
-			FoodsToSnacks.Add(lines[0][j], dict);
+                dict.Add(lines[i][0].Trim(), int.Parse(lines[i][j]));
+			FoodsToSnacks.Add(lines[0][j].Trim(), dict);
 		}
 
 		Resources.UnloadUnusedAssets();
