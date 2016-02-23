@@ -53,7 +53,7 @@ public class Flow : MonoBehaviour
 		}
 		switch (CurrentPhase) {
 		case Phase.WaitingForStart:
-			if (Input.GetKeyDown(KeyCode.Space)) {
+			if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonUp(0)) {
 				CurrentPhase = Phase.Waiting;
 				iTween.MoveTo(garageDoor, iTween.Hash("position", garageOpenPosition,
 				                                      "easeType", "easeInQuad",
@@ -65,7 +65,8 @@ public class Flow : MonoBehaviour
 		case Phase.Waiting:
 			break;
 		case Phase.CustomerSpeech:
-			if (Input.GetKeyDown(KeyCode.Space)) {
+            Rect screenRect = new Rect(0, 0, Screen.width, Screen.height/4);
+            if (Input.GetKeyDown(KeyCode.Space) || (Input.GetMouseButtonUp(0) && screenRect.Contains(Input.mousePosition))) {
 				CurrentPhase = Phase.Prepare;
 				snackPicker.Reset();
 			}
@@ -80,8 +81,9 @@ public class Flow : MonoBehaviour
 			BoxCollider cc = Customers.Instance.currentCustomer.GetComponent<BoxCollider>();
 			if (cc != null){
 				Destroy(cc);
-			};
-			if (Input.GetKeyDown(KeyCode.Space)) {
+			}
+            
+            if (Input.GetKeyDown(KeyCode.Space) || (Input.GetMouseButtonDown(0) && snackPicker.ClickedPlate())) {
 				Customers.Instance.ServeCustomer(snackPicker.hasSnacksOnPlate);
 				sky.ChangeColour();
 			}

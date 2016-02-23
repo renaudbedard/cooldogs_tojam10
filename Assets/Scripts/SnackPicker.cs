@@ -105,4 +105,21 @@ public class SnackPicker : MonoBehaviour {
 			Cursor.transform.position = clickHit.point;
 		}
 	}
+
+    public bool ClickedPlate()
+    {
+        if (Physics.Raycast(clickRay, out clickHit, 500f, dropSnackLayers))
+        {
+            cookingMat = clickHit.collider.GetComponent<CookingMat>();
+            if (cookingMat != null)
+            {
+                if (hasSnacksOnPlate && heldSnack == null)
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
 }
