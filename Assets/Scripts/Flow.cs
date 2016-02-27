@@ -48,13 +48,21 @@ public class Flow : MonoBehaviour
 	}
 
 	void Update() {
-		if (Input.GetKeyDown (KeyCode.Escape)) {
+#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBPLAYER
+        if (Input.GetKeyDown (KeyCode.Escape)) {
 			ResetGame();
 		}
-		switch (CurrentPhase) {
+#endif
+
+        switch (CurrentPhase) {
 		case Phase.WaitingForStart:
-			if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonUp(0)) {
-				CurrentPhase = Phase.Waiting;
+#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBPLAYER
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonUp(0)) {
+#else
+            if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended) {
+#endif
+
+                    CurrentPhase = Phase.Waiting;
 				iTween.MoveTo(garageDoor, iTween.Hash("position", garageOpenPosition,
 				                                      "easeType", "easeInQuad",
 				                                      "time", 2f,
@@ -66,8 +74,12 @@ public class Flow : MonoBehaviour
 			break;
 		case Phase.CustomerSpeech:
             Rect screenRect = new Rect(0, 0, Screen.width, Screen.height/4);
+#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBPLAYER
             if (Input.GetKeyDown(KeyCode.Space) || (Input.GetMouseButtonUp(0) && screenRect.Contains(Input.mousePosition))) {
-				CurrentPhase = Phase.Prepare;
+#else
+            if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended && screenRect.Contains(Input.touches[0].position)) {
+#endif
+                    CurrentPhase = Phase.Prepare;
 				snackPicker.Reset();
 			}
 			break;
@@ -82,9 +94,12 @@ public class Flow : MonoBehaviour
 			if (cc != null){
 				Destroy(cc);
 			}
-            
+#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBPLAYER
             if (Input.GetKeyDown(KeyCode.Space) || (Input.GetMouseButtonDown(0) && snackPicker.ClickedPlate())) {
-				Customers.Instance.ServeCustomer(snackPicker.hasSnacksOnPlate);
+#else
+            if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended && snackPicker.ClickedPlate()) {
+#endif
+                    Customers.Instance.ServeCustomer(snackPicker.hasSnacksOnPlate);
 				sky.ChangeColour();
 			}
 			break;

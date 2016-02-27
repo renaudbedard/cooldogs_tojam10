@@ -44,9 +44,19 @@ public class SnackPicker : MonoBehaviour {
 			return; 
 		}
 		CoolCursor.Instance.hugCursor = true;
-		clickRay = camera.ScreenPointToRay (Input.mousePosition);
-		if (Input.GetMouseButtonDown (0)) {
-			Debug.DrawRay (transform.position + transform.forward, clickRay.direction * 500f);
+
+#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBPLAYER
+        clickRay = camera.ScreenPointToRay (Input.mousePosition);
+        if (Input.GetMouseButtonDown(0)){
+#else
+        if (Input.touchCount > 0) {
+            clickRay = camera.ScreenPointToRay(Input.touches[0].position);
+        }
+        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began) {
+#endif
+
+        //if (Input.GetMouseButtonDown (0)) {
+            Debug.DrawRay (transform.position + transform.forward, clickRay.direction * 500f);
 			if (heldSnack == null) {
 				if (Physics.Raycast (clickRay, out clickHit, 500f, snacksOnly)) {
 					Debug.Log (clickHit.collider.gameObject.name);
@@ -71,9 +81,14 @@ public class SnackPicker : MonoBehaviour {
 				}
 			}
 		}
-		if (Input.GetMouseButtonUp (0) && heldSnack != null) {
 
-			heldSnack.GetComponentInChildren<SpriteRenderer>().sortingOrder = lastLayer;
+#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBPLAYER
+        if (Input.GetMouseButtonUp (0) && heldSnack != null) {
+#else
+        if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended) {
+#endif
+
+            heldSnack.GetComponentInChildren<SpriteRenderer>().sortingOrder = lastLayer;
 			lastLayer++;
 			heldSnack.GetComponentInChildren<Rigidbody>().isKinematic = true;
 			heldSnack.GetComponentInChildren<Rigidbody>().velocity = Vector3.zero;
